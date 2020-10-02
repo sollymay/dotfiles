@@ -29,6 +29,8 @@ sudo apt-get install -y \
 # Install Jetbrains Mono font
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
 sudo unzip JetBrainsMono-2.001.zip -d /usr/share/fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/VictorMono.zip
+sudo unzip VictorMono.zip -d /usr/share/fonts
 sudo fc-cache -f -v
 
 # Install & Configure Zsh
