@@ -48,7 +48,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize github virtualenv pipenv pip python brew zsh-syntax-highlighting)
+plugins=(git colorize github virtualenv pipenv pip python brew )
 
 # User configuration
 
@@ -81,3 +81,4 @@ alias python=python3
 alias pip=/usr/local/bin/pip3
 export PATH="/opt/brew/opt/openssl@3/bin:$PATH"
 export PATH="/opt/brew/bin:$PATH"
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
