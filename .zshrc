@@ -81,4 +81,4 @@ alias python=python3
 alias pip=/usr/local/bin/pip3
 export PATH="/opt/brew/opt/openssl@3/bin:$PATH"
 export PATH="/opt/brew/bin:$PATH"
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

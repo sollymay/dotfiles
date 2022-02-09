@@ -12,6 +12,7 @@ vim.opt.splitbelow = true
 vim.opt.autoindent = true
 vim.opt.title = true
 vim.opt.mouse = 'a'
+vim.opt.splitright = true -- opens a split to the right instead of left
 vim.opt.showtabline=2
 vim.opt.autochdir = true
 vim.o.completeopt = "menu,menuone"
@@ -20,11 +21,13 @@ vim.o.signcolumn = "yes"
 -- Setting leader to space
 vim.g.mapleader = " "
 vim.g.nvim_tree_quit_on_open = 1
--- Install plugins
-require('plugins')
 
 -- Plugins configuration
 require('plugin-settings')
+
+-- Install plugins
+require('plugins')
+
 
 -- Shortcuts
 require('shortcuts')
