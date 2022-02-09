@@ -15,6 +15,7 @@ require('lualine').setup {
 -- NerdTree alternative
 require('nvim-tree').setup {
 auto_close = true,
+open_on_setup = true,
 view = {
   width = 50,
   number = true,
@@ -91,3 +92,4 @@ require('gitsigns').setup{
 }
 require("indent_blankline").setup {}
 require("todo-comments").setup{}
+require("FTerm").setup{}

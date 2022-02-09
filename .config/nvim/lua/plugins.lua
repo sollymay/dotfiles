@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup({function()
   use 'wbthomason/packer.nvim'  -- Packer can manage itself
   use 'tpope/vim-fugitive' -- Git commands
   use 'bronson/vim-trailing-whitespace' -- highlight trailing spaces
@@ -51,4 +51,13 @@ return require('packer').startup(function()
   use {"lukas-reineke/indent-blankline.nvim"} -- Indentation guides on all lines
   use {'folke/todo-comments.nvim'}
   use('wakatime/vim-wakatime')
-end)
+  use('numToStr/FTerm.nvim')
+end,
+config = {
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end
+  }
+}}
+)
