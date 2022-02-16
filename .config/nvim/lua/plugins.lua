@@ -43,15 +43,13 @@ return require('packer').startup({function()
 -- Nice Features
   use {'norcalli/nvim-colorizer.lua'} -- Automatically highlight colors
   use {'windwp/nvim-autopairs'} -- Pair closing for brackets
-  use {"blackCauldron7/surround.nvim",
-        config = function()
-          require"surround".setup {mappings_style = "sandwich"}
-        end}
+  use {'tpope/vim-surround'}
   use {'folke/which-key.nvim'}
   use {"lukas-reineke/indent-blankline.nvim"} -- Indentation guides on all lines
   use {'folke/todo-comments.nvim'}
   use('wakatime/vim-wakatime')
   use('numToStr/FTerm.nvim')
+  use {"ellisonleao/glow.nvim"}
 end,
 config = {
   display = {

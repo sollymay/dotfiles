@@ -6,26 +6,33 @@ end
 vim.api.nvim_set_keymap('', '<C-e>', ':NvimTreeToggle<CR>', {noremap = true}) -- Nvim-tree toggle shortcut
 vim.api.nvim_set_keymap('', '<leader>f', ':Telescope find_files<CR>', {noremap = true}) --telescope find files shortcut
 vim.api.nvim_set_keymap('', '<leader>g', ':Telescope live_grep<CR>', {noremap = true})
+-- LSP related stuff
 vim.api.nvim_set_keymap('', '<leader>.', ':Lspsaga code_action<CR>', {noremap = true})
+vim.api.nvim_set_keymap('', '<leader>d', ':Lspsaga signature_help<CR>', {noremap = true})
 vim.api.nvim_set_keymap('', '<leader>d', ':Lspsaga signature_help<CR>', {noremap = true})
 vim.api.nvim_set_keymap('', '<leader>r', ':Lspsaga rename<CR>', {noremap = true})
 vim.api.nvim_set_keymap('', '<leader>b', ':Lspsaga show_line_diagnostics<CR>', {noremap = true})
+-- Utilities
 vim.api.nvim_set_keymap('', '<leader>e', '<cmd>Trouble<cr>', {silent = true, noremap = true})
 vim.api.nvim_set_keymap('', '<leader><leader>', ':WhichKey<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>o', ':FlutterOutlineToggle<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>", {noremap=true})
-vim.api.nvim_set_keymap('n', '<leader>dh', ':lua require"dap".toggle_breakpoint()<CR>', {noremap =true})
 vim.api.nvim_set_keymap('', '<leader>tt', ':TodoTrouble<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>t', '<CMD>lua require("FTerm").toggle()<CR>', {noremap=true})
+vim.api.nvim_set_keymap('', '<leader>pm', ':Glow<CR>', {noremap = true})
 -- Better window navigation
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", {noremap=true})
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", {noremap=true})
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", {noremap=true})
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", {noremap=true})
 -- Move text up and down
-vim.api.nvim_set_keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", {noremap=true})
-vim.api.nvim_set_keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", {noremap=true})
-vim.api.nvim_set_keymap('', '<leader>s', '<Plug>Lightspeed_s', {noremap=true})
+vim.api.nvim_set_keymap('n', 'J', ':m .+1<CR>==', {noremap=true})
+vim.api.nvim_set_keymap('n', 'K', ':m .-2<CR>==', {noremap = true})
+vim.api.nvim_set_keymap('i', 'J', '<Esc>:m .+1<CR>==gi', {noremap = true})
+vim.api.nvim_set_keymap('i', 'K', '<Esc>:m .-2<CR>==gi', {noremap = true})
+vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap=true })
+vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap=true })
+
 map('n', '<leader>dH', ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
 --map('n', '<c-k>', ':lua require"dap".step_out()<CR>')
 --map('n', "<c-l>", ':lua require"dap".step_into()<CR>')

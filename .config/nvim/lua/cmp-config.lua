@@ -34,6 +34,7 @@ local lsp_symbols = {
 cmp.setup{
   sources = {
               { name = 'luasnip' },
+              { name = 'path' },
               { name = 'nvim_lua' },
               { name = 'nvim_lsp' },
               { name = 'buffer' },
