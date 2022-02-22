@@ -16,7 +16,6 @@ vim.opt.title = true
 vim.opt.mouse = 'a'
 vim.opt.splitright = true -- opens a split to the right instead of left
 vim.opt.showtabline=2
-vim.opt.autochdir = true
 vim.o.completeopt = "menu,menuone"
 vim.o.signcolumn = "yes"
 vim.g.glow_binary_path = '/opt/brew/bin/glow'
