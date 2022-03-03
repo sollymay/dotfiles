@@ -47,9 +47,10 @@ return require('packer').startup({function()
   use {'folke/which-key.nvim'}
   use {"lukas-reineke/indent-blankline.nvim"} -- Indentation guides on all lines
   use {'folke/todo-comments.nvim'}
-  use('wakatime/vim-wakatime')
-  use('numToStr/FTerm.nvim')
+  use {'wakatime/vim-wakatime'}
+  use {'numToStr/FTerm.nvim'}
   use {"ellisonleao/glow.nvim"}
+  use {"mg979/vim-visual-multi"}
 end,
 config = {
   display = {

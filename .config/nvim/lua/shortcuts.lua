@@ -3,6 +3,8 @@ local function map(mode, lhs, rhs, opts)
   if opts then options = vim.tbl_extend('force', options, opts) end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
+-- General Keyboard Shortcuts
+--vim.api.nvim_set_keymap('', '<esc>', [[<C-\><C-n>]], {noremap = true})
 vim.api.nvim_set_keymap('', '<C-e>', ':NvimTreeToggle<CR>', {noremap = true}) -- Nvim-tree toggle shortcut
 vim.api.nvim_set_keymap('', '<leader>f', ':Telescope find_files<CR>', {noremap = true}) --telescope find files shortcut
 vim.api.nvim_set_keymap('', '<leader>g', ':Telescope live_grep<CR>', {noremap = true})
@@ -20,6 +22,7 @@ vim.api.nvim_set_keymap('', '<leader>b', ":lua require'dap'.toggle_breakpoint()<
 vim.api.nvim_set_keymap('', '<leader>tt', ':TodoTrouble<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>t', '<CMD>lua require("FTerm").toggle()<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>pm', ':Glow<CR>', {noremap = true})
+map('n', '<leader>dH', ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
 -- Better window navigation
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", {noremap=true})
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", {noremap=true})
@@ -28,12 +31,11 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", {noremap=true})
 -- Move text up and down
 vim.api.nvim_set_keymap('n', 'J', ':m .+1<CR>==', {noremap=true})
 vim.api.nvim_set_keymap('n', 'K', ':m .-2<CR>==', {noremap = true})
-vim.api.nvim_set_keymap('i', 'J', '<Esc>:m .+1<CR>==gi', {noremap = true})
-vim.api.nvim_set_keymap('i', 'K', '<Esc>:m .-2<CR>==gi', {noremap = true})
+--vim.api.nvim_set_keymap('i', 'J', '<Esc>:m .+1<CR>==gi', {noremap = true})
+--vim.api.nvim_set_keymap('i', 'K', '<Esc>:m .-2<CR>==gi', {noremap = true})
 vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap=true })
 vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap=true })
 
-map('n', '<leader>dH', ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
 --map('n', '<c-k>', ':lua require"dap".step_out()<CR>')
 --map('n', "<c-l>", ':lua require"dap".step_into()<CR>')
 --map('n', '<c-j>', ':lua require"dap".step_over()<CR>')
@@ -48,8 +50,6 @@ map('n', '<leader>da', ':lua require"debugHelper".attach()<CR>')
 map('n', '<leader>dA', ':lua require"debugHelper".attachToRemote()<CR>')
 map('n', '<leader>di', ':lua require"dap.ui.widgets".hover()<CR>')
 map('n', '<leader>d?', ':lua local widgets=require"dap.ui.widgets";widgets.centered_float(widgets.scopes)<CR>')
---    vim.api.nvim_buf_set_keymap(bufnr, '“n', '<leader>a', '<cmd>lua require("lsp-fastaction").code_action()<CR>')
---    vim.api.nvim_buf_set_keymap(bufnr, 'v', '<leader>a',"<esc><cmd>lua require('lsp-fastaction').range_code_action()<CR>")
 
 -- Setting up completion using tab:
 --local t = function(str)
@@ -100,3 +100,17 @@ map('n', '<leader>d?', ':lua local widgets=require"dap.ui.widgets";widgets.cente
 --nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 --nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 --nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+--#region
+-- terminal shortcuts
+function _G.set_terminal_keymaps()
+  local opts = {noremap = true}
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+end
+
+-- if you only want these mappings for toggle term use term://*toggleterm#* instead
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')

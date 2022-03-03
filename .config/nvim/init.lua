@@ -1,10 +1,13 @@
 -- General Config
+
 vim.opt.undofile = true
+vim.opt.clipboard = 'unnamedplus'
 vim.opt.encoding = 'utf-8' -- encoding is utf-8
 vim.opt.autochdir = false -- don't set working dir to current file
 vim.opt.ignorecase = true -- autocomplete will be case insensitive
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 vim.opt.background = 'dark'
 vim.opt.termguicolors = true
 vim.opt.expandtab = true
@@ -22,7 +25,6 @@ vim.g.glow_binary_path = '/opt/brew/bin/glow'
 -- vim.opt.mousehide = true
 -- Setting leader to space
 vim.g.mapleader = " "
-vim.g.nvim_tree_quit_on_open = 1
 
 -- Plugins configuration
 require('plugin-settings')
@@ -30,10 +32,10 @@ require('plugin-settings')
 -- Install plugins
 require('plugins')
 
-
 -- Shortcuts
 require('shortcuts')
 
 -- Things i still can't do in LUA
 vim.cmd[[ highlight gitsignscurrentlineblame guifg=#ffffff]]
-vim.cmd[[ autocmd BufWritePre *.* lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+vim.cmd[[ autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+vim.cmd[[ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)]]

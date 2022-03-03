@@ -255,6 +255,11 @@ _G.packer_plugins = {
     path = "/Users/salomonmay/.local/share/nvim/site/pack/packer/start/vim-trailing-whitespace",
     url = "https://github.com/bronson/vim-trailing-whitespace"
   },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/Users/salomonmay/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
+  },
   ["vim-wakatime"] = {
     loaded = true,
     path = "/Users/salomonmay/.local/share/nvim/site/pack/packer/start/vim-wakatime",
