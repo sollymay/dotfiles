@@ -51,6 +51,9 @@ return require('packer').startup({function()
   use {'numToStr/FTerm.nvim'}
   use {"ellisonleao/glow.nvim"}
   use {"mg979/vim-visual-multi"}
+  use {"jbyuki/venn.nvim"}
+  use {'mvllow/modes.nvim'}
+  use {'numToStr/Comment.nvim'}
 end,
 config = {
   display = {

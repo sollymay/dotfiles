@@ -80,12 +80,12 @@ require('nvim-treesitter.configs').setup{
         rainbow = {
     -- Setting colors
     colors = {
-        "#FFD800",
+        "#EFF982",
         "#AE81FF",
         "#F92672",
         "#A6E22E",
         "#FD971F",
-        "#00FF00",
+        "#46F971",
         "#66D9EF"
     },
     -- Term colors
@@ -105,3 +105,12 @@ require('gitsigns').setup{
 require("indent_blankline").setup {}
 require("todo-comments").setup{}
 require("FTerm").setup{}
+require("modes").setup{
+    colors = {
+        copy = "#AE81FF",
+        delete = "#F92672",
+        insert = "#46F971",
+        visual = "#EFF982",
+    },
+}
+require('Comment').setup()

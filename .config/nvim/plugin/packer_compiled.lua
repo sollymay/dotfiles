@@ -165,6 +165,11 @@ _G.packer_plugins = {
     path = "/Users/salomonmay/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["modes.nvim"] = {
+    loaded = true,
+    path = "/Users/salomonmay/.local/share/nvim/site/pack/packer/start/modes.nvim",
+    url = "https://github.com/mvllow/modes.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/salomonmay/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -239,6 +244,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/salomonmay/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
+  },
+  ["venn.nvim"] = {
+    loaded = true,
+    path = "/Users/salomonmay/.local/share/nvim/site/pack/packer/start/venn.nvim",
+    url = "https://github.com/jbyuki/venn.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
