@@ -9,15 +9,23 @@ vim.api.nvim_set_keymap('', '<C-e>', ':NvimTreeToggle<CR>', {noremap = true}) --
 vim.api.nvim_set_keymap('', '<leader>f', ':Telescope find_files<CR>', {noremap = true}) --telescope find files shortcut
 vim.api.nvim_set_keymap('', '<leader>g', ':Telescope live_grep<CR>', {noremap = true})
 -- LSP related stuff
+vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "<leader>dn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "<leader>dp", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>.', ':Lspsaga code_action<CR>', {noremap = true})
-vim.api.nvim_set_keymap('', '<leader>d', ':Lspsaga signature_help<CR>', {noremap = true})
-vim.api.nvim_set_keymap('', '<leader>d', ':Lspsaga signature_help<CR>', {noremap = true})
 vim.api.nvim_set_keymap('', '<leader>r', ':Lspsaga rename<CR>', {noremap = true})
 vim.api.nvim_set_keymap('', '<leader>b', ':Lspsaga show_line_diagnostics<CR>', {noremap = true})
 -- Utilities
 vim.api.nvim_set_keymap('', '<leader>e', '<cmd>Trouble<cr>', {silent = true, noremap = true})
 vim.api.nvim_set_keymap('', '<leader><leader>', ':WhichKey<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>o', ':FlutterOutlineToggle<CR>', {noremap=true})
+vim.api.nvim_set_keymap('', 'rn', ':FlutterRun<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>", {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>tt', ':TodoTrouble<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>t', '<CMD>lua require("FTerm").toggle()<CR>', {noremap=true})
@@ -40,7 +48,7 @@ vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap=true })
 --map('n', "<c-l>", ':lua require"dap".step_into()<CR>')
 --map('n', '<c-j>', ':lua require"dap".step_over()<CR>')
 --map('n', '<c-h>', ':lua require"dap".continue()<CR>')
-map('n', '<leader>dn', ':lua require"dap".run_to_cursor()<CR>')
+map('n', '<leader>rc', ':lua require"dap".run_to_cursor()<CR>')
 map('n', '<leader>dk', ':lua require"dap".up()<CR>')
 map('n', '<leader>dj', ':lua require"dap".down()<CR>')
 map('n', '<leader>dc', ':lua require"dap".terminate()<CR>')
@@ -86,21 +94,8 @@ map('n', '<leader>d?', ':lua local widgets=require"dap.ui.widgets";widgets.cente
 --  end
 --end
 
---vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
---vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
---vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
---vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- LSP Niceties
 
---vim.api.nvim_set_keymap('', 'gd', '', {noremap = true})
---nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
---nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
---nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
---nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
---nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
---nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
---nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
---nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
---#region
 -- terminal shortcuts
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}

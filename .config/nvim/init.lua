@@ -26,16 +26,34 @@ vim.g.glow_binary_path = '/opt/brew/bin/glow'
 -- Setting leader to space
 vim.g.mapleader = " "
 
--- Plugins configuration
-require('plugin-settings')
-
 -- Install plugins
-require('plugins')
+require "user.plugins"
 
--- Shortcuts
-require('shortcuts')
+-- Plugins configuration
+require "user.cmp"
+require "user.colorizer"
+require "user.comment"
+require "user.fterm"
+require "user.gitsigns"
+require "user.indent_blankline"
+require "user.lsp"
+require "user.lualine"
+require "user.modes"
+require "user.nvim-autopairs"
+require "user.nvim-tree"
+require "user.nvim-treesitter"
+require "user.telescope"
+require "user.todo-comments"
+require "user.toggleterm"
+require "user.which-key"
+
+-- Keymaps
+require "user.keymaps"
 
 -- Things i still can't do in LUA
 vim.cmd[[ highlight gitsignscurrentlineblame guifg=#ffffff]]
 vim.cmd[[ autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync(nil, 1000)]]
 vim.cmd[[ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+
+-- Nvim theme
+vim.cmd[[colorscheme dracula]]

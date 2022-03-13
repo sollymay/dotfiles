@@ -1,7 +1,7 @@
 -- lsp-config configuration:
 require('lspconfig').pylsp.setup{
       settings = {
-    pyls = {
+    pylsp = {
       configurationSources = {"flake8"},
       plugins = {
         jedi_completion = {enabled = true},
