@@ -53,7 +53,9 @@ return require('packer').startup({function()
   use {"mg979/vim-visual-multi"}
   use {"jbyuki/venn.nvim"}
   use {'mvllow/modes.nvim'}
-  use {'numToStr/Comment.nvim'}
+  use {'numToStr/Comment.nvim',
+       tag = 'v0.6',
+  }
 end,
 config = {
   display = {

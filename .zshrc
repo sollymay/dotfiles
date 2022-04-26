@@ -5,10 +5,10 @@ export TERM="xterm-256color"
 export ZSH=~/.oh-my-zsh
 
 #####################################################################################
-### Powerlevel 9k Settings - https://github.com/bhilburn/powerlevel9k - NOTE: I'm using powerlevel10k
+### Powerlevel 9k Settings - https://github.com/bhilburn/powerlevel10k - NOTE: I'm using powerlevel10k
 #####################################################################################
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv custom_macos_icon dir vcs status)
@@ -39,7 +39,7 @@ DEFAULT_USER=`whoami`
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
-unsetopt correct_all
+# unsetopt correct_all
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -50,10 +50,6 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git colorize github virtualenv pipenv pip python brew )
 
-# User configuration
-
-source $ZSH/oh-my-zsh.sh
-source ~/.bash_profile
 
 
 export EDITOR='nvim'
@@ -82,3 +78,15 @@ alias pip=/usr/local/bin/pip3
 export PATH="/opt/brew/opt/openssl@3/bin:$PATH"
 export PATH="/opt/brew/bin:$PATH"
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /home/salomonmay/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# User configuration
+source $ZSH/oh-my-zsh.sh
+#source ~/.bash_profile
+
+export PATH="$HOME/Documents/coding/Flutter-SDK/flutter/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/usr/bin:$PATH"
+#!/bin/bash
+

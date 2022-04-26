@@ -10,7 +10,7 @@ vim.g.view_mappings_list = {
 }
 
 nvim_tree.setup {
-auto_close = true,
+
 open_on_setup = true,
 view = {
     width = 50,
