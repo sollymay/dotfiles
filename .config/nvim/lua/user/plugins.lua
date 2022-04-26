@@ -25,7 +25,9 @@ return require('packer').startup({function()
   use {"hrsh7th/cmp-nvim-lsp"}
   use {"hrsh7th/cmp-path"}
   use {"hrsh7th/cmp-cmdline"}
-  use { "hrsh7th/nvim-cmp" }
+  use { "hrsh7th/nvim-cmp",
+        branch = "dev",
+      }
   use {'hrsh7th/cmp-nvim-lua'} -- Lua Autocompletion
   use {'tami5/lspsaga.nvim'} -- LSP cooler Autocompletion
   use {'akinsho/flutter-tools.nvim'} -- LSP for Flutter
@@ -54,6 +56,7 @@ return require('packer').startup({function()
   use {"jbyuki/venn.nvim"}
   use {'mvllow/modes.nvim'}
   use {'numToStr/Comment.nvim'}
+  use {'nvim-treesitter/nvim-treesitter-textobjects'} -- Allow me to select functions, etc with keymaps
 end,
 config = {
   display = {

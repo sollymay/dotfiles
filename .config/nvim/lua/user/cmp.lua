@@ -92,13 +92,14 @@ cmp.setup{
         return item
       end,
     },
-  documentation = {
-    border = "rounded",
-  },
   window = {
     completion = { -- rounded border; thin-style scrollbar
-      border = 'rounded',
+      border = "rounded",
       scrollbar = '║',
-  },
+    },
+    documentation = {
+      border = "rounded",
+      scrollbar = '║',
+    }, 
 },
 }
