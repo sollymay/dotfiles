@@ -1,0 +1,50 @@
+Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
+       -- appearance
+       , additionalFonts = ["xft:VictorMono Nerd Font Mono:bold:pixelsize=30:antialias=true:antihinting=true"]
+       , borderColor = "#282a36"
+       , border = BottomB 3
+       , bgColor = "#282a36"
+       , fgColor = "#f8f8f2"
+       , alpha = 255
+       , position = Top
+       , textOffset = -1
+       , iconOffset = -1
+
+       -- layout
+       , sepChar =  "%"   -- delineator between plugin names and straight text
+       , alignSep = "}{"  -- separator between left-right alignment
+       , template = "  %multicpu%%memory%%dynnetwork% }<fc=#282a36,#ff79c6> %UnsafeStdinReader% </fc>{%KFLL%%date%  "
+
+       -- general behavior
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = True
+       , hideOnStart = False
+       , allDesktops = True
+       , overrideRedirect = True
+
+       -- plugins
+       , commands = [
+ Run Weather "KFLL" [ "--template", "<fc=#282a36,#bd93f9> MIA | <tempF>°F | <rh>% </fc>"
+                             ] 360
+
+        -- network activity monitor (dynamic interface resolution)
+        , Run DynNetwork     [ "--template" , "<fc=#282a36,#50fa7b> UP/DN: <tx>kB/s | <rx>kB/s </fc>"
+--                             , "--Low"      , "1000"       -- units: B/s
+--                             , "--High"     , "5000"       -- units: B/s
+                             ] 10
+
+        -- cpu activity monitor
+        , Run MultiCpu       [ "--template" , "<fc=#282a36,#8be9fd> CPU (<total>%) | </fc>"
+                             ] 10
+
+        -- memory usage monitor
+        , Run Memory         [ "--template" ,"<fc=#282a36,#8be9fd>MEM (<usedratio>%) </fc>"
+                             ] 10
+
+        -- time and date indicator
+        , Run Date "<fc=#282a36,#ffb86c> %b %d %Y %H:%M:%S </fc>" "date" 10
+        , Run UnsafeStdinReader
+        ]
+
+       }
