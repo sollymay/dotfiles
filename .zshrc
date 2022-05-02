@@ -93,4 +93,4 @@ export PATH="$HOME/usr/bin:$PATH"
 
 =======
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
->>>>>>> 7aa1be38dc73c70b1919f4279cd247361b22253f
+

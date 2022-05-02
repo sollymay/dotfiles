@@ -55,14 +55,11 @@ return require('packer').startup({function()
   use {"mg979/vim-visual-multi"}
   use {"jbyuki/venn.nvim"}
   use {'mvllow/modes.nvim'}
-<<<<<<< HEAD
   use {'numToStr/Comment.nvim',
        tag = 'v0.6',
   }
-=======
   use {'numToStr/Comment.nvim'}
   use {'nvim-treesitter/nvim-treesitter-textobjects'} -- Allow me to select functions, etc with keymaps
->>>>>>> 7aa1be38dc73c70b1919f4279cd247361b22253f
 end,
 config = {
   display = {
