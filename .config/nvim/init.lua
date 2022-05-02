@@ -1,5 +1,4 @@
 -- General Config
-
 vim.opt.undofile = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.encoding = 'utf-8' -- encoding is utf-8
