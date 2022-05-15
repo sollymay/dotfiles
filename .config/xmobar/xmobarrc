@@ -13,7 +13,7 @@ Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
        -- layout
        , sepChar =  "%"   -- delineator between plugin names and straight text
        , alignSep = "}{"  -- separator between left-right alignment
-       , template = "  %multicpu%%memory%%dynnetwork% }<fc=#282a36,#ff79c6> %UnsafeStdinReader% </fc>{%KFLL%%date%  "
+       , template = "  %multicpu%%memory%%dynnetwork% }<fc=#282a36,#ff79c6> %UnsafeStdinReader%%music% </fc>{%KFLL%%date%  "
 
        -- general behavior
        , lowerOnStart = True
@@ -45,6 +45,7 @@ Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
         -- time and date indicator
         , Run Date "<fc=#282a36,#ffb86c> %b %d %Y %H:%M:%S </fc>" "date" 10
         , Run UnsafeStdinReader
+        , Run Com "/bin/sh" ["-c","~/.xmonad/song_info.sh"] "music" 30
         ]
 
        }
