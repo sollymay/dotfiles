@@ -256,7 +256,7 @@ myStartupHook = do
         spawnOnce "nitrogen --restore &"
         spawnOnce "compton &"
         spawnOnce "ulauncher --hide-window --no-window-shadow &"
-        spawnOnce "/usr/local/bin/start_xkeysnail.sh"
+        spawnOnce "/bin/bash -c '/usr/bin/xhost +SI:localuser:root && /home/salomonmay/.config/kinto/killdups.sh && /usr/local/bin/xkeysnail --quiet --watch /home/salomonmay/.config/kinto/kinto.py'"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -303,7 +303,7 @@ defaults = def {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = spacingRaw True (Border 0 10 10 10) True (Border 10 10 10 10) True $ myLayout,
+        layoutHook         = spacingRaw False (Border 0 10 10 10) True (Border 10 10 10 10) True $ myLayout,
         manageHook         = myManageHook <+> manageHook def,
         handleEventHook    = myEventHook,
         startupHook        = myStartupHook
