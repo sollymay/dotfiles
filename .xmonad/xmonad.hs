@@ -257,6 +257,7 @@ myStartupHook = do
         spawnOnce "compton &"
         spawnOnce "ulauncher --hide-window --no-window-shadow &"
         spawnOnce "/bin/bash -c '/usr/bin/xhost +SI:localuser:root && /home/salomonmay/.config/kinto/killdups.sh && /usr/local/bin/xkeysnail --quiet --watch /home/salomonmay/.config/kinto/kinto.py'"
+        spawnOnce "xinput set-prop 'Logitech ERGO M575' 'libinput Natural Scrolling Enabled' 1"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
