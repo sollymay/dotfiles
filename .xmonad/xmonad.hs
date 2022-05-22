@@ -1,7 +1,7 @@
 import XMonad
 import Data.Monoid
 import System.Exit
--- import Graphics.X11.ExtraTypes.XF86
+import Graphics.X11.ExtraTypes.XF86
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Spacing
@@ -35,7 +35,7 @@ myBorderWidth   = 4
 -- "windows key" is usually mod4Mask.
 --
 
-myModMask       = mod4Mask
+myModMask       = mod1Mask
 -- The default number of workspaces (virtual screens) and their names.
 -- By default we use numeric strings, but any string may be used as a
 -- workspace name. The number of workspaces is determined by the length
@@ -78,11 +78,14 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_space ), sendMessage NextLayout)
     , ((modm .|. shiftMask, xK_c     ), kill)
 
-    -- Volume Control
-    -- ,((0, xF86XK_AudioMute), spawn "amixer set Master toggle")
-    -- , ((0, xF86XK_AudioLowerVolume), spawn "amixer set Master 5%- unmute")
-    -- , ((0, xF86XK_AudioRaiseVolume), spawn "amixer set Master 5%+ unmute")
-    --  Reset the layouts on the current workspace to default
+    -- Volume and Media Control
+    ,((0, xF86XK_AudioMute), spawn "amixer set Master toggle")
+    , ((0, xF86XK_AudioLowerVolume), spawn "amixer sset Master 3%-")
+    , ((0, xF86XK_AudioRaiseVolume), spawn "amixer sset Master 3%+")
+    , ((0, xF86XK_AudioPrev), spawn "playerctl previous")
+    , ((0, xF86XK_AudioNext), spawn "playerctl next")
+    , ((0, xF86XK_AudioPlay), spawn "playerctl play-pause")
+     -- Reset the layouts on the current workspace to default
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
@@ -253,6 +256,8 @@ myStartupHook = do
         spawnOnce "nitrogen --restore &"
         spawnOnce "compton &"
         spawnOnce "ulauncher --hide-window --no-window-shadow &"
+        spawnOnce "/bin/bash -c '/usr/bin/xhost +SI:localuser:root && /home/salomonmay/.config/kinto/killdups.sh && /usr/local/bin/xkeysnail --quiet --watch /home/salomonmay/.config/kinto/kinto.py'"
+        spawnOnce "xinput set-prop 'Logitech ERGO M575' 'libinput Natural Scrolling Enabled' 1"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -299,7 +304,7 @@ defaults = def {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = spacingRaw True (Border 0 10 10 10) True (Border 10 10 10 10) True $ myLayout,
+        layoutHook         = spacingRaw False (Border 0 10 10 10) True (Border 10 10 10 10) True $ myLayout,
         manageHook         = myManageHook <+> manageHook def,
         handleEventHook    = myEventHook,
         startupHook        = myStartupHook
