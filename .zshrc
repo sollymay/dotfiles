@@ -79,7 +79,6 @@ export PATH="/opt/brew/opt/openssl@3/bin:$PATH"
 export PATH="/opt/brew/bin:$PATH"
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-source /home/salomonmay/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
