@@ -21,6 +21,7 @@ vim.opt.showtabline=2
 vim.o.completeopt = "menu,menuone"
 vim.o.signcolumn = "yes"
 vim.g.glow_binary_path = '/opt/brew/bin/glow'
+vim.g.glow_border = "rounded"
 -- vim.opt.mousehide = true
 -- Setting leader to space
 vim.g.mapleader = " "
