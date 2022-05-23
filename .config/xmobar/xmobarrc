@@ -1,19 +1,14 @@
-Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
+Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=20:antialias=true"
        -- appearance
        , additionalFonts = ["xft:VictorMono Nerd Font Mono:bold:pixelsize=30:antialias=true:antihinting=true"]
-       , borderColor = "#282a36"
-       , border = BottomB 3
        , bgColor = "#282a36"
        , fgColor = "#f8f8f2"
-       , alpha = 255
-       , position = Top
-       , textOffset = -5
-       , iconOffset = -1
+       , position = Static {xpos=20, ypos=2, width=3798, height=32}
 
        -- layout
        , sepChar =  "%"   -- delineator between plugin names and straight text
        , alignSep = "}{"  -- separator between left-right alignment
-       , template = "  %multicpu%%memory%%dynnetwork% }<fc=#282a36,#ff79c6> %UnsafeStdinReader% </fc><fc=#282a36,#f1fa8c>%music%</fc>{%KFLL%%date%  "
+       , template = "%multicpu%%memory%%dynnetwork% }<fc=#282a36,#ff79c6> %UnsafeStdinReader% </fc><fc=#282a36,#f1fa8c>%music%</fc>{%KFLL%%date%"
 
        -- general behavior
        , lowerOnStart = True
