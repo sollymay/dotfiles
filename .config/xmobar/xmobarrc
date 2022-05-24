@@ -1,8 +1,9 @@
-Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=20:antialias=true"
+Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
        -- appearance
-       , additionalFonts = ["xft:VictorMono Nerd Font Mono:bold:pixelsize=30:antialias=true:antihinting=true"]
+       , additionalFonts = ["xft:Mononoki Nerd Font:pixelsize=20:antialias=true:hinting=true"]
        , bgColor = "#282a36"
        , fgColor = "#f8f8f2"
+       , textOffsets = [-8]
        , position = Static {xpos=20, ypos=2, width=3798, height=32}
 
        -- layout
@@ -20,25 +21,25 @@ Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=20:antialias=true"
 
        -- plugins
        , commands = [
- Run Weather "KFLL" [ "--template", "<fc=#282a36,#bd93f9> MIA | <tempF>°F | <rh>% </fc>"
+ Run Weather "KFLL" [ "--template", "<fc=#282a36,#bd93f9> <fn=1>\xf0c2</fn> MIA | <tempF>°F | <rh>% </fc>"
                              ] 360
 
         -- network activity monitor (dynamic interface resolution)
-        , Run DynNetwork     [ "--template" , "<fc=#282a36,#50fa7b> UP (<tx>kB/s) | DN (<rx>kB/s) </fc>"
+        , Run DynNetwork     [ "--template" , "<fc=#282a36,#50fa7b> <fn=1>\xf0aa</fn> UP (<tx>kB/s) | <fn=1>\xf0ab</fn> DN (<rx>kB/s) </fc>"
 --                             , "--Low"      , "1000"       -- units: B/s
 --                             , "--High"     , "5000"       -- units: B/s
                              ] 10
 
         -- cpu activity monitor
-        , Run MultiCpu       [ "--template" , "<fc=#282a36,#8be9fd> CPU (<total>%) | </fc>"
+        , Run MultiCpu       [ "--template" , "<fc=#282a36,#8be9fd><fn=1> \xf108</fn> CPU (<total>%) | </fc>"
                              ] 10
 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"<fc=#282a36,#8be9fd>MEM (<usedratio>%) </fc>"
+        , Run Memory         [ "--template" ,"<fc=#282a36,#8be9fd><fn=1>\xf0c9</fn> MEM (<usedratio>%) </fc>"
                              ] 10
 
         -- time and date indicator
-        , Run Date "<fc=#282a36,#ffb86c> %b %d %Y %H:%M:%S </fc>" "date" 10
+        , Run Date "<fc=#282a36,#ffb86c> <fn=1>\xf017</fn> %b %d %Y %H:%M:%S </fc>" "date" 10
         , Run UnsafeStdinReader
         , Run Com "/bin/sh" ["-c","~/.xmonad/song_info.sh"] "music" 30
         ]
