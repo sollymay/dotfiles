@@ -1,0 +1,6 @@
+icon_size 20
+kludges force_icons_size
+background "#FFB86C"
+grow_gravity E
+icon_gravity E
+geometry 1x1+3784+6

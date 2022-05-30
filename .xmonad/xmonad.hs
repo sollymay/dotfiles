@@ -27,7 +27,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 4
+myBorderWidth   = 2
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -50,9 +50,9 @@ xmobarEscape = concatMap doubleLts
 
 myWorkspaces :: [String]
 
-myWorkspaces = clickable . (map xmobarEscape) $ ["SURF","CODE","PLAY","TALK"]
+myWorkspaces = clickable . map xmobarEscape $ ["SURF","CODE","PLAY","TALK"]
   where
-         clickable l = [ "<action=xdotool key super+" ++ show (n) ++ ">" ++ ws ++ "</action>" |
+         clickable l = [ "<action=xdotool key alt+" ++ show n ++ ">" ++ ws ++ "</action>" |
                              (i,ws) <- zip [1..4] l,
                             let n = i ]
 -- Border colors for unfocused and focused windows, respectively.
@@ -63,7 +63,7 @@ myFocusedBorderColor = "#ff80bf"
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
-myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
+myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
 
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
@@ -134,7 +134,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
+    , ((modm .|. shiftMask, xK_q     ), io exitSuccess)
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
@@ -165,18 +165,18 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 ------------------------------------------------------------------------
 -- Mouse bindings: default actions bound to mouse events
 --
-myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
+myMouseBindings XConfig {XMonad.modMask = modm} = M.fromList
 
     -- mod-button1, Set the window to floating mode and move by dragging
-    [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
-                                       >> windows W.shiftMaster))
+    [ ((modm, button1), \w -> focus w >> mouseMoveWindow w
+                                       >> windows W.shiftMaster)
 
     -- mod-button2, Raise the window to the top of the stack
-    , ((modm, button2), (\w -> focus w >> windows W.shiftMaster))
+    , ((modm, button2), \w -> focus w >> windows W.shiftMaster)
 
     -- mod-button3, Set the window to floating mode and resize by dragging
-    , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
-                                       >> windows W.shiftMaster))
+    , ((modm, button3), \w -> focus w >> mouseResizeWindow w
+                                       >> windows W.shiftMaster)
 
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
@@ -258,6 +258,9 @@ myStartupHook = do
         spawnOnce "ulauncher --hide-window --no-window-shadow &"
         spawnOnce "/bin/bash -c '/usr/bin/xhost +SI:localuser:root && /home/salomonmay/.config/kinto/killdups.sh && /usr/local/bin/xkeysnail --quiet --watch /home/salomonmay/.config/kinto/kinto.py'"
         spawnOnce "xinput set-prop 'Logitech ERGO M575' 'libinput Natural Scrolling Enabled' 1"
+        spawnOnce "stalonetray"
+        spawnOnce "blueman-applet"
+        spawnOnce "nm-applet"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -304,7 +307,7 @@ defaults = def {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = spacingRaw False (Border 0 10 10 10) True (Border 10 10 10 10) True $ myLayout,
+        layoutHook         = spacingRaw False (Border 0 10 10 10) True (Border 10 10 10 10) True myLayout,
         manageHook         = myManageHook <+> manageHook def,
         handleEventHook    = myEventHook,
         startupHook        = myStartupHook

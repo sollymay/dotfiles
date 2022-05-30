@@ -40,6 +40,7 @@ require('lspconfig').sumneko_lua.setup {
         }
     }
 }
+require('lspconfig').hls.setup{}
 
 -- trouble (diagnostics) in list:
 require('trouble').setup{

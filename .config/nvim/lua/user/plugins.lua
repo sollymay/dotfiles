@@ -25,9 +25,7 @@ return require('packer').startup({function()
   use {"hrsh7th/cmp-nvim-lsp"}
   use {"hrsh7th/cmp-path"}
   use {"hrsh7th/cmp-cmdline"}
-  use { "hrsh7th/nvim-cmp",
-        branch = "dev",
-      }
+  use { "hrsh7th/nvim-cmp"}
   use {'hrsh7th/cmp-nvim-lua'} -- Lua Autocompletion
   use {'tami5/lspsaga.nvim'} -- LSP cooler Autocompletion
   use {'akinsho/flutter-tools.nvim'} -- LSP for Flutter
@@ -50,21 +48,22 @@ return require('packer').startup({function()
   use {"lukas-reineke/indent-blankline.nvim"} -- Indentation guides on all lines
   use {'folke/todo-comments.nvim'}
   use {'wakatime/vim-wakatime'}
-  use {'numToStr/FTerm.nvim'}
+  -- use {'numToStr/FTerm.nvim'}
+  use {'akinsho/toggleterm.nvim'}
   use {"ellisonleao/glow.nvim"}
   use {"mg979/vim-visual-multi"}
   use {"jbyuki/venn.nvim"}
   use {'mvllow/modes.nvim'}
-  use {'numToStr/Comment.nvim',
-       tag = 'v0.6',
-  }
+  -- use {'numToStr/Comment.nvim',
+  --      tag = 'v0.6',
+  -- }
   use {'numToStr/Comment.nvim'}
   use {'nvim-treesitter/nvim-treesitter-textobjects'} -- Allow me to select functions, etc with keymaps
 end,
 config = {
   display = {
     open_fn = function()
-      return require('packer.util').float({ border = 'single' })
+      return require('packer.util').float({ border = 'rounded' })
     end
   }
 }}

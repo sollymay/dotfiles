@@ -27,7 +27,7 @@ vim.api.nvim_set_keymap('', '<leader>o', ':FlutterOutlineToggle<CR>', {noremap=t
 vim.api.nvim_set_keymap('', 'rn', ':FlutterRun<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>", {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>tt', ':TodoTrouble<CR>', {noremap=true})
-vim.api.nvim_set_keymap('', '<leader>t', '<CMD>lua require("FTerm").toggle()<CR>', {noremap=true})
+vim.api.nvim_set_keymap('', '<leader>t', ":ToggleTerm<CR>", {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>pm', ':Glow<CR>', {noremap = true})
 -- Better window navigation
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", {noremap=true})
@@ -57,6 +57,8 @@ map('n', '<leader>di', ':lua require"dap.ui.widgets".hover()<CR>')
 map('n', '<leader>d?', ':lua local widgets=require"dap.ui.widgets";widgets.centered_float(widgets.scopes)<CR>')
 -- Glow (Markdown Preview)
 vim.api.nvim_set_keymap('', '<leader>m', ':Glow<CR>', {noremap=true})
+-- Multi line operations vim-visual-multi
+vim.api.nvim_set_keymap('', '<leader>N', '<C-N>', {noremap=true})
 -- LSP Niceties
 
 -- terminal shortcuts

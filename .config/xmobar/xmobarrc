@@ -39,7 +39,7 @@ Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
                              ] 10
 
         -- time and date indicator
-        , Run Date "<fc=#282a36,#ffb86c> <fn=1>\xf017</fn> %b %d %Y %H:%M:%S </fc>" "date" 10
+        , Run Date "<fc=#282a36,#ffb86c> <fn=1>\xf017</fn> %b %d %Y %H:%M:%S |      </fc>" "date" 10
         , Run UnsafeStdinReader
         , Run Com "/bin/sh" ["-c","~/.xmonad/song_info.sh"] "music" 30
         ]
