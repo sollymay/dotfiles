@@ -53,6 +53,10 @@ require "user.keymaps"
 vim.cmd[[ highlight gitsignscurrentlineblame guifg=#ffffff]]
 vim.cmd[[ autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync(nil, 1000)]]
 vim.cmd[[ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-
+vim.cmd[[ let g:VM_maps = {}]]
+vim.cmd[[ let g:VM_maps['Find Under'] = '<C-d>']]
+vim.cmd[[ let g:VM_maps['Find Subword Under'] = '<C-d>']]
+vim.cmd[[let g:VM_maps["Select Cursor Down"] = '<M-C-Down>']]
+vim.cmd[[let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>']]
 -- Nvim theme
 vim.cmd[[colorscheme dracula]]
