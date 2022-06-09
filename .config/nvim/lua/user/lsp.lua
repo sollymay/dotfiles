@@ -1,3 +1,13 @@
+require("nvim-lsp-installer").setup({
+    automatic_installation = false,
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+})
 -- lsp-config configuration:
 require('lspconfig').pylsp.setup{
       settings = {
@@ -49,7 +59,11 @@ require('trouble').setup{
 }
 
 -- lsp-saga configuration:
-require('lspsaga').init_lsp_saga()
+local saga = require 'lspsaga'
+
+saga.init_lsp_saga {
+	border_style = 'round',
+}
 -- Nvim-compe configuration (completion)
 
 -- flutter-tools (aka LSP flutter) configuration:

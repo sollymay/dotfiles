@@ -26,7 +26,7 @@ return require('packer').startup({function()
   use {'tami5/lspsaga.nvim'} -- LSP cooler Autocompletion
   use {'akinsho/flutter-tools.nvim'} -- LSP for Flutter
   use {'folke/trouble.nvim'} --show list of diagnostics
-
+  use {'williamboman/nvim-lsp-installer'}
 -- Snippets
   use {'L3MON4D3/LuaSnip'}
   use {'Neevash/awesome-flutter-snippets'}
