@@ -93,5 +93,4 @@ source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 [ -f "/home/salomonmay/.ghcup/env" ] && source "/home/salomonmay/.ghcup/env" # ghcup-env
-alias luamake=/home/salomonmay/lua-language-server/3rd/luamake/luamake
-export PATH="$HOME/lua-language-server/bin:$PATH"
+export PATH="$HOME/tools/lua-language-server/bin:$PATH"

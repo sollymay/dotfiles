@@ -1,22 +1,18 @@
 return require('packer').startup({function()
+  -- General Plugins
+  use {'dracula/vim', as = 'dracula'} -- theme
   use 'wbthomason/packer.nvim'  -- Packer can manage itself
   use 'tpope/vim-fugitive' -- Git commands
   use 'bronson/vim-trailing-whitespace' -- highlight trailing spaces
   use 'kyazdani42/nvim-web-devicons' -- requirements from other plugins
-  use {'dracula/vim', as = 'dracula'} -- theme
-  use {'nvim-lualine/lualine.nvim'} -- https://github.com/nvim-lualine/lualine.nvim
+  use {'nvim-lualine/lualine.nvim'} -- https://github.com/nvim-lualine/lualine.nvim: status line
   use {'nvim-lua/plenary.nvim'} -- requirements from other plugins
--- maybe need to change theme in config
--- this is like vim-startify
-  use {'goolord/alpha-nvim', config = function ()
-          require'alpha.themes.dashboard'.section.footer.val = require'alpha.fortune'()
-          require'alpha'.setup(require'alpha.themes.dashboard'.opts) end}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'} -- better syntax highlighting
-  use {'p00f/nvim-ts-rainbow'}
+  use {'p00f/nvim-ts-rainbow'} -- Rainbow parens
   use {'kyazdani42/nvim-tree.lua'}  -- equivalent to NerdTree
   use {'nvim-telescope/telescope.nvim'} -- searching files/grep
   use {'lewis6991/gitsigns.nvim'} -- showing commits within files/etc
-  use {'ggandor/lightspeed.nvim'}
+  use {'ggandor/lightspeed.nvim'} -- using s and S to search and move
 
 -- LSP Config
   use {'neovim/nvim-lspconfig'} -- LSP
@@ -39,25 +35,23 @@ return require('packer').startup({function()
 -- Debugging
   use {'mfussenegger/nvim-dap'} -- Debugging plug in (set up breakpoints etc)
   use {'kosayoda/nvim-lightbulb'} -- add lightbulb if there is a code suggestion
+  use {'rcarriga/nvim-dap-ui'}
+  use {'theHamsta/nvim-dap-virtual-text'}
+  use {'nvim-telescope/telescope-dap.nvim'}
 
 -- Nice Features
   use {'norcalli/nvim-colorizer.lua'} -- Automatically highlight colors
   use {'windwp/nvim-autopairs'} -- Pair closing for brackets
-  use {'tpope/vim-surround'}
-  use {'folke/which-key.nvim'}
+  use {'tpope/vim-surround'} -- To easily enclose stuff in parens and quotes
   use {"lukas-reineke/indent-blankline.nvim"} -- Indentation guides on all lines
-  use {'folke/todo-comments.nvim'}
-  use {'wakatime/vim-wakatime'}
-  -- use {'numToStr/FTerm.nvim'}
-  use {'akinsho/toggleterm.nvim'}
-  use {"ellisonleao/glow.nvim"}
-  use {"mg979/vim-visual-multi"}
-  use {"jbyuki/venn.nvim"}
-  use {'mvllow/modes.nvim'}
-  -- use {'numToStr/Comment.nvim',
-  --      tag = 'v0.6',
-  -- }
-  use {'numToStr/Comment.nvim'}
+  use {'folke/todo-comments.nvim'} -- highlight todo comments
+  use {'wakatime/vim-wakatime'} -- Tracking my devel time
+  use {'akinsho/toggleterm.nvim'} -- a nice terminal
+  use {"ellisonleao/glow.nvim"} -- preview markdown files in nvim
+  use {"mg979/vim-visual-multi"} -- multicursor support
+  use {"jbyuki/venn.nvim"} -- diagramos (have not really used it)
+  use {'mvllow/modes.nvim'} -- highlight current line with mode color
+  use {'numToStr/Comment.nvim'} -- comment text with gc
   use {'nvim-treesitter/nvim-treesitter-textobjects'} -- Allow me to select functions, etc with keymaps
 end,
 config = {

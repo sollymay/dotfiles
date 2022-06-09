@@ -54,12 +54,8 @@ require('lspsaga').init_lsp_saga()
 
 -- flutter-tools (aka LSP flutter) configuration:
 require("flutter-tools").setup{
-debugger = {
-        enabled = true,
-        run_via_dap = true,
-},
 widget_guides = {
-        enabled = true,
+    enabled = true,
 },
 ui = {
     -- the border type to use for all floating windows, the same options/formats
@@ -75,6 +71,21 @@ ui = {
             virtual_text_str = "■", -- the virtual text character to highlight
         }
     },
+
+-- debugger = {
+--
+--         enabled = true,
+--         run_via_dap = true,
+--       register_configurations = function()
+--       local dap = require("dap")
+--       dap.adapters.dart = {
+--         type = "executable",
+--         command = "node",
+--         args = { debugger_path, "flutter" },
+--       }
+--       -- Other configuration herek
+--     end,
+-- },
 }
 
 -- set borders on completion window (or at least try)
