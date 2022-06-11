@@ -23,10 +23,12 @@ return require('packer').startup({function()
   use {"hrsh7th/cmp-cmdline"}
   use { "hrsh7th/nvim-cmp"}
   use {'hrsh7th/cmp-nvim-lua'} -- Lua Autocompletion
-  use {'tami5/lspsaga.nvim'} -- LSP cooler Autocompletion
+  use {'nvim-telescope/telescope-ui-select.nvim' } -- used for code actions with default nvim-lsp
+  use {'filipdutescu/renamer.nvim'} -- rename stuff quickly
   use {'akinsho/flutter-tools.nvim'} -- LSP for Flutter
   use {'folke/trouble.nvim'} --show list of diagnostics
   use {'williamboman/nvim-lsp-installer'}
+
 -- Snippets
   use {'L3MON4D3/LuaSnip'}
   use {'Neevash/awesome-flutter-snippets'}

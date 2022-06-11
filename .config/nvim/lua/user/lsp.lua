@@ -1,13 +1,3 @@
-require("nvim-lsp-installer").setup({
-    automatic_installation = false,
-    ui = {
-        icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
-        }
-    }
-})
 -- lsp-config configuration:
 require('lspconfig').pylsp.setup{
       settings = {
@@ -37,12 +27,8 @@ require('lspconfig').pylsp.setup{
     }
   },
 }
-require('lspconfig').bashls.setup{}
-require('lspconfig').dockerls.setup{}
-require('lspconfig').jsonls.setup{}
-require('lspconfig').sqlls.setup{}
 require('lspconfig').sumneko_lua.setup {
-        settings = {
+    settings = {
         Lua = {
             diagnostics = {
                 globals = { 'vim' }
@@ -50,20 +36,28 @@ require('lspconfig').sumneko_lua.setup {
         }
     }
 }
+require('lspconfig').bashls.setup{}
+require('lspconfig').dockerls.setup{}
+require('lspconfig').jsonls.setup{}
+require('lspconfig').sqlls.setup{}
 require('lspconfig').hls.setup{}
 
+require("nvim-lsp-installer").setup({
+    automatic_installation = false,
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+})
 -- trouble (diagnostics) in list:
 require('trouble').setup{
         auto_open = true,
         auto_close = true,
 }
 
--- lsp-saga configuration:
-local saga = require 'lspsaga'
-
-saga.init_lsp_saga {
-	border_style = 'round',
-}
 -- Nvim-compe configuration (completion)
 
 -- flutter-tools (aka LSP flutter) configuration:
@@ -86,20 +80,11 @@ ui = {
         }
     },
 
--- debugger = {
---
---         enabled = true,
---         run_via_dap = true,
---       register_configurations = function()
---       local dap = require("dap")
---       dap.adapters.dart = {
---         type = "executable",
---         command = "node",
---         args = { debugger_path, "flutter" },
---       }
---       -- Other configuration herek
---     end,
--- },
+}
+
+-- Renamer configuration
+require("renamer").setup{
+
 }
 
 -- set borders on completion window (or at least try)

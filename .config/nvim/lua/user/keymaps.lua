@@ -20,9 +20,8 @@ vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {nor
 vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {noremap=true})
 vim.api.nvim_set_keymap("n", "<leader>dn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", {noremap=true})
 vim.api.nvim_set_keymap("n", "<leader>dp", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", {noremap=true})
-vim.api.nvim_set_keymap('', '<leader>.', ':Lspsaga code_action<CR>', {noremap = true})
-vim.api.nvim_set_keymap('', '<leader>r', ':Lspsaga rename<CR>', {noremap = true})
-vim.api.nvim_set_keymap('', '<leader>b', ':Lspsaga show_line_diagnostics<CR>', {noremap = true})
+vim.api.nvim_set_keymap('', '<leader>.', '<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('', '<leader>r', '<cmd>lua require"renamer".rename()<CR>', {noremap = true})
 -- Utilities
 vim.api.nvim_set_keymap('', '<leader>e', '<cmd>Trouble<cr>', {silent = true, noremap = true})
 vim.api.nvim_set_keymap('', '<leader>o', ':FlutterOutlineToggle<CR>', {noremap=true})
