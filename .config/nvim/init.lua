@@ -60,3 +60,13 @@ vim.cmd[[let g:VM_maps["Select Cursor Down"] = '<M-C-Down>']]
 vim.cmd[[let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>']]
 -- Nvim theme
 vim.cmd[[colorscheme dracula]]
+vim.api.nvim_set_hl(0, 'DapBreakpoint', {fg='#50fa7b' })
+vim.api.nvim_set_hl(0, 'DapLogPoint', {fg='#f1fa8c'})
+vim.api.nvim_set_hl(0, 'DapStopped', {fg='#ff5555'})
+
+vim.fn.sign_define('DapBreakpoint', { text='', texthl='DapBreakpoint'})
+vim.fn.sign_define('DapBreakpointCondition', { text='ﳁ', texthl='DapBreakpoint'})
+vim.fn.sign_define('DapBreakpointRejected', { text='', texthl='DapBreakpoint'})
+vim.fn.sign_define('DapLogPoint', { text='', texthl='DapLogPoint'})
+vim.fn.sign_define('DapStopped', { text='', texthl='DapStopped'})
+vim.api.nvim_command("redraw")

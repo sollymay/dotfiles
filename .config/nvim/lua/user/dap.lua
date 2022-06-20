@@ -37,3 +37,6 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function ()
     dapui.close()
 end
+
+dap.defaults.fallback.terminal_win_cmd = '80vsplit new'
+
