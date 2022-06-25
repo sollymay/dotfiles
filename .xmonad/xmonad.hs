@@ -272,13 +272,13 @@ main = do
         xmonad $ docks $ defaults {
           logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
-           ,ppVisible = xmobarColor "#282a36" "#ff79c6" . wrap "("")"
-           ,ppHiddenNoWindows = xmobarColor "#282a36" "#ff79c6"
-           ,ppWsSep = xmobarColor "#282a36" "#ff79c6" " | "
+           ,ppVisible = xmobarColor "#ff79c6" "#282a36". wrap "("")"
+           ,ppHiddenNoWindows = xmobarColor  "#ff79c6" "#282a36"
+           ,ppWsSep = xmobarColor  "#ff79c6" "#282a36"" | "
            ,ppOrder = \(ws:_:_:_) -> [ws]
-           ,ppTitle = xmobarColor "#282a36" "#ff79c6" . shorten 40 . wrap "[" "]"
-           ,ppCurrent = xmobarColor "#282a36" "#ff79c6" . wrap "[""]"
-           ,ppHidden  = xmobarColor "#282a36" "#ff79c6"
+           ,ppTitle = xmobarColor  "#ff79c6" "#282a36". shorten 40 . wrap "[" "]"
+           ,ppCurrent = xmobarColor  "#ff79c6" "#282a36". wrap "[""]"
+           ,ppHidden  = xmobarColor "#ff79c6" "#282a36"
            --,ppLayout = xmobarColor "#222222" "#ff79c6" . wrap "[" "]"
            ,ppUrgent = xmobarColor "#900000" "" . wrap "[" "]"
         }

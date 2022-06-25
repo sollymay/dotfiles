@@ -9,7 +9,7 @@ Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
        -- layout
        , sepChar =  "%"   -- delineator between plugin names and straight text
        , alignSep = "}{"  -- separator between left-right alignment
-       , template = "%multicpu%%memory%%dynnetwork% }<fc=#282a36,#ff79c6> %UnsafeStdinReader% </fc><fc=#282a36,#f1fa8c>%music%</fc>{%KFLL%%date%"
+       , template = "<box type=Bottom width=2 color=#8be9fd>%multicpu%%memory%</box>  <box type=Bottom width=2 color=#50fa7b>%dynnetwork%</box>  <box type=Bottom width=2 color=#f1fa8c><fc=#f1fa8c><fn=1></fn>%music%</fc></box>}<box type=Bottom width=2 color=#ff79c6><fc=#ff79c6>%UnsafeStdinReader%</fc></box> {<box type=Bottom width=2 color=#bd93f9>%KFLL%</box>  <box type=Bottom width=2 color=#ffb86c>%date%</box>"
 
        -- general behavior
        , lowerOnStart = True
@@ -21,25 +21,25 @@ Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
 
        -- plugins
        , commands = [
- Run Weather "KFLL" [ "--template", "<fc=#282a36,#bd93f9> <fn=1>\xf0c2</fn> MIA | <tempF>°F | <rh>% </fc>"
+ Run Weather "KFLL" [ "--template", "<fc=#bd93f9><fn=1>\xf0c2</fn> MIA | <tempF>°F | <rh>%</fc>"
                              ] 360
 
         -- network activity monitor (dynamic interface resolution)
-        , Run DynNetwork     [ "--template" , "<fc=#282a36,#50fa7b> <fn=1>\xf0aa</fn> UP (<tx>kB/s) | <fn=1>\xf0ab</fn> DN (<rx>kB/s) </fc>"
+        , Run DynNetwork     [ "--template" , "<fc=#50fa7b><fn=1>\xf0aa</fn> UP (<tx>kB/s) | <fn=1>\xf0ab</fn> DN (<rx>kB/s)</fc>"
 --                             , "--Low"      , "1000"       -- units: B/s
 --                             , "--High"     , "5000"       -- units: B/s
                              ] 10
 
         -- cpu activity monitor
-        , Run MultiCpu       [ "--template" , "<fc=#282a36,#8be9fd><fn=1> \xf108</fn> CPU (<total>%) | </fc>"
+        , Run MultiCpu       [ "--template" , "<fc=#8be9fd><fn=1>\xf108</fn> CPU (<total>%) | </fc>"
                              ] 10
 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"<fc=#282a36,#8be9fd><fn=1>\xf0c9</fn> MEM (<usedratio>%) </fc>"
+        , Run Memory         [ "--template" ,"<fc=#8be9fd><fn=1>\xf0c9</fn> MEM (<usedratio>%)</fc>"
                              ] 10
 
         -- time and date indicator
-        , Run Date "<fc=#282a36,#ffb86c> <fn=1>\xf017</fn> %b %d %Y %H:%M:%S |      </fc>" "date" 10
+        , Run Date "<fc=#ffb86c><fn=1>\xf017</fn> %b %d %Y %H:%M:%S |     </fc>" "date" 10
         , Run UnsafeStdinReader
         , Run Com "/bin/sh" ["-c","~/.xmonad/song_info.sh"] "music" 30
         ]
