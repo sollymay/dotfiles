@@ -261,6 +261,7 @@ myStartupHook = do
         spawnOnce "stalonetray"
         spawnOnce "blueman-applet"
         spawnOnce "nm-applet"
+        spawnOnce "/usr/bin/dunst"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

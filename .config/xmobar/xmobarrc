@@ -9,7 +9,7 @@ Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
        -- layout
        , sepChar =  "%"   -- delineator between plugin names and straight text
        , alignSep = "}{"  -- separator between left-right alignment
-       , template = "<box type=Bottom width=2 color=#8be9fd>%multicpu%%memory%</box>  <box type=Bottom width=2 color=#50fa7b>%dynnetwork%</box>  <box type=Bottom width=2 color=#f1fa8c><fc=#f1fa8c><fn=1></fn>%music%</fc></box>}<box type=Bottom width=2 color=#ff79c6><fc=#ff79c6>%UnsafeStdinReader%</fc></box> {<box type=Bottom width=2 color=#bd93f9>%KFLL%</box>  <box type=Bottom width=2 color=#ffb86c>%date%</box>"
+       , template = "<box type=Bottom width=2 color=#8be9fd>%multicpu%%memory%</box>  <box type=Bottom width=2 color=#50fa7b>%dynnetwork%</box>  <box type=Bottom width=2 color=#f1fa8c><fc=#f1fa8c><fn=1></fn>%music%</fc></box>}<fc=#ff79c6>%UnsafeStdinReader%</fc>{<box type=Bottom width=2 color=#bd93f9>%KFLL%</box>  <box type=Bottom width=2 color=#ffb86c>%date%</box>"
 
        -- general behavior
        , lowerOnStart = True
