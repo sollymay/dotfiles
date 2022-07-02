@@ -26,6 +26,7 @@ vim.api.nvim_set_keymap('', '<leader>r', '<cmd>lua require"renamer".rename()<CR>
 vim.api.nvim_set_keymap('', '<leader>e', '<cmd>Trouble<cr>', {silent = true, noremap = true})
 vim.api.nvim_set_keymap('', '<leader>o', ':FlutterOutlineToggle<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', 'rn', ':FlutterRun<CR>', {noremap=true})
+vim.api.nvim_set_keymap('', 'qt', ':FlutterQuit<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>", {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>tt', ':TodoTrouble<CR>', {noremap=true})
 vim.api.nvim_set_keymap('', '<leader>t', ":ToggleTerm<CR>", {noremap=true})
