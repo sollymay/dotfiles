@@ -79,9 +79,9 @@ myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
     , ((modm .|. shiftMask, xK_c     ), kill)
 
     -- Volume and Media Control
-    ,((0, xF86XK_AudioMute), spawn "amixer set Master toggle")
-    , ((0, xF86XK_AudioLowerVolume), spawn "amixer sset Master 3%-")
-    , ((0, xF86XK_AudioRaiseVolume), spawn "amixer sset Master 3%+")
+    ,((0, xF86XK_AudioMute), spawn "~/.xmonad/volume.sh mute")
+    , ((0, xF86XK_AudioLowerVolume), spawn "~/.xmonad/volume.sh down")
+    , ((0, xF86XK_AudioRaiseVolume), spawn "~/.xmonad/volume.sh up")
     , ((0, xF86XK_AudioPrev), spawn "playerctl previous")
     , ((0, xF86XK_AudioNext), spawn "playerctl next")
     , ((0, xF86XK_AudioPlay), spawn "playerctl play-pause")
