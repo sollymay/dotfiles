@@ -45,7 +45,7 @@ require "user.nvim-treesitter"
 require "user.telescope"
 require "user.todo-comments"
 require "user.toggleterm"
-
+require "user.hydra"
 -- Keymaps
 require "user.keymaps"
 

@@ -223,7 +223,6 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
 --
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
-    , className =? "ulauncher"      --> hasBorder False
     , className =? "studio" --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]

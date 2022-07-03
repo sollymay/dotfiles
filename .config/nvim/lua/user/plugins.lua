@@ -55,6 +55,9 @@ return require('packer').startup({function()
   use {'mvllow/modes.nvim'} -- highlight current line with mode color
   use {'numToStr/Comment.nvim'} -- comment text with gc
   use {'nvim-treesitter/nvim-treesitter-textobjects'} -- Allow me to select functions, etc with keymaps
+  use { 'anuvyklack/hydra.nvim', -- this package is to use same keybinding for different things
+    requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
+}
 end,
 config = {
   display = {
