@@ -4,7 +4,8 @@ Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
        , bgColor = "#282a36"
        , fgColor = "#f8f8f2"
        , textOffsets = [-8]
-       , position = Static {xpos=20, ypos=2, width=3798, height=32}
+       , position = TopW C 99
+       --, position = Static {xpos=20, ypos=2, width=3798, height=32}
 
        -- layout
        , sepChar =  "%"   -- delineator between plugin names and straight text

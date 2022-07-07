@@ -3,5 +3,7 @@ kludges force_icons_size
 background "#282a36"
 grow_gravity E
 icon_gravity E
-geometry 2x1+3770+6
-max_geometry 2x1+3770+6
+#geometry 2x1+3770+6
+#max_geometry 2x1+3770+6
+geometry 2x1-20+0
+max_geometry 2x1-20+0
