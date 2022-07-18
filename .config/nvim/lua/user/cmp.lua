@@ -41,6 +41,7 @@ cmp.setup{
       completeopt = 'menu,menuone,noinsert'
                },
   sources = {
+            { name = 'jira' },
             { name = 'luasnip', options = { insert = true } },
             { name = 'path', options = { insert = true } },
             { name = 'nvim_lua', options = { insert = true } },
