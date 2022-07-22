@@ -55,6 +55,13 @@ myWorkspaces = clickable . map xmobarEscape $ ["SURF","CODE","PLAY","TALK"]
          clickable l = [ "<action=xdotool key alt+" ++ show n ++ ">" ++ ws ++ "</action>" |
                              (i,ws) <- zip [1..4] l,
                             let n = i ]
+-- Create a list of All Floating windows
+
+data AllFloats = AllFloats deriving (Read, Show)
+
+instance SetsAmbiguous AllFloats where
+    hiddens _ wset _ _ _= M.keys $ W.floating wset
+
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#dddddd"
@@ -224,6 +231,7 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "studio" --> doFloat
+    , className =? "ulauncher" --> hasBorder False
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
@@ -307,7 +315,7 @@ defaults = def {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = spacingRaw False (Border 0 10 10 10) True (Border 10 10 10 10) True myLayout,
+        layoutHook         = lessBorders AllFloats $ spacingRaw False (Border 0 10 10 10) True (Border 10 10 10 10) True $ myLayout,
         manageHook         = myManageHook <+> manageHook def,
         handleEventHook    = myEventHook,
         startupHook        = myStartupHook
