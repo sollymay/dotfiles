@@ -94,3 +94,5 @@ source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f "/home/salomonmay/.ghcup/env" ] && source "/home/salomonmay/.ghcup/env" # ghcup-env
 export PATH="$HOME/tools/lua-language-server/bin:$PATH"
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+

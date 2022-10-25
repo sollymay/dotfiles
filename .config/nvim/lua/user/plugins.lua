@@ -1,4 +1,4 @@
-return require('packer').startup({function()
+return require('packer').startup({function(use)
   -- General Plugins
   use {'dracula/vim', as = 'dracula'} -- theme
   use 'wbthomason/packer.nvim'  -- Packer can manage itself

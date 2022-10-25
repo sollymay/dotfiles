@@ -26,6 +26,7 @@ vim.g.glow_border = "rounded"
 vim.g.mapleader = " "
 
 -- Install plugins
+require "user.lsp"
 require "user.plugins"
 
 -- Plugins configuration
@@ -36,7 +37,6 @@ require "user.dap"
 require "user.fterm"
 require "user.gitsigns"
 require "user.indent_blankline"
-require "user.lsp"
 require "user.lualine"
 require "user.modes"
 require "user.nvim-autopairs"
