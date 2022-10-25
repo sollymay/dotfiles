@@ -28,14 +28,14 @@ yabai -m config top_padding                  10
 yabai -m config bottom_padding               10
 yabai -m config left_padding                 10
 yabai -m config right_padding                10
-yabai -m config window_gap                   10
+yabai -m config window_gap                   15
 
 # SIP Required
 # prevent border from being under the active window
 # enable borders
 yabai -m config window_border                on
 yabai -m config active_window_border_topmost on
-yabai -m config window_border_width          6
+yabai -m config window_border_width          2.5
 yabai -m config active_window_border_color   0xffff79c6
 yabai -m config normal_window_border_color   0xfff8f8f2
 
