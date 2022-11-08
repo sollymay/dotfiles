@@ -26,6 +26,7 @@ return require('packer').startup({function(use)
   use {'nvim-telescope/telescope-ui-select.nvim' } -- used for code actions with default nvim-lsp
   use {'filipdutescu/renamer.nvim'} -- rename stuff quickly
   use {'akinsho/flutter-tools.nvim'} -- LSP for Flutter
+  use {'f-person/pubspec-assist-nvim'} -- Install pubspec dependencies
   use {'folke/trouble.nvim'} --show list of diagnostics
   use {'williamboman/nvim-lsp-installer'}
 
