@@ -1,12 +1,15 @@
 local status_ok, modes = pcall(require, "modes")
 if not status_ok then
-  return
+    return
 end
-modes.setup{
+modes.setup {
     colors = {
-        copy = "#AE81FF",
-        delete = "#F92672",
-        insert = "#46F971",
-        visual = "#EFF982",
+        copy = "#BD93F9",
+        delete = "#FF5555",
+        insert = "#50fa7b",
+        visual = "#F1FA8C",
     },
+    set_number = true,
+    set_cursor = true,
+    line_opacity = 0.5,
 }
