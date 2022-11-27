@@ -1,8 +1,9 @@
 return require("packer").startup({ function(use)
     -- General Plugins
     use "wbthomason/packer.nvim" -- Packer can manage itself
-    use "Mofiqul/dracula.nvim" -- Theme
+    -- use "Mofiqul/dracula.nvim" -- Theme
     use "tpope/vim-fugitive" -- Git commands
+    use { 'dracula/vim' }
     use "bronson/vim-trailing-whitespace" -- highlight trailing spaces
     use "kyazdani42/nvim-web-devicons" -- requirements from other plugins
     use { "nvim-lualine/lualine.nvim" } -- https://github.com/nvim-lualine/lualine.nvim: status line

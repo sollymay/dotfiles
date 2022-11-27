@@ -44,7 +44,7 @@ require "user.telescope"
 require "user.todo-comments"
 require "user.toggleterm"
 require "user.hydra"
-require "user.dracula"
+-- require "user.dracula"
 require "user.modes"
 -- Keymaps
 require "user.keymaps"
@@ -59,6 +59,7 @@ vim.cmd [[ let g:VM_maps['Find Under'] = '<C-d>']]
 vim.cmd [[ let g:VM_maps['Find Subword Under'] = '<C-d>']]
 vim.cmd [[let g:VM_maps["Select Cursor Down"] = '<M-C-Down>']]
 vim.cmd [[let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>']]
+vim.cmd [[ let g:dracula_colorterm = 0]]
 -- Nvim theme
 vim.cmd [[colorscheme dracula]]
 vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#50fa7b' })
