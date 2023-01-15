@@ -30,6 +30,7 @@ return require("packer").startup({ function(use)
     use { 'f-person/pubspec-assist-nvim' } -- Install pubspec dependencies
     use { 'folke/trouble.nvim' } --show list of diagnostics
     use { "williamboman/mason.nvim" } -- install LSP servers easily
+    use { "onsails/lspkind.nvim" }
     -- Snippets
     use { 'L3MON4D3/LuaSnip' }
     use { 'Neevash/awesome-flutter-snippets' }
@@ -53,7 +54,7 @@ return require("packer").startup({ function(use)
     use { "ellisonleao/glow.nvim" } -- preview markdown files in nvim
     use { "mg979/vim-visual-multi" } -- multicursor support
     use { "jbyuki/venn.nvim" } -- diagramos (have not really used it)
-    -- use {'mvllow/modes.nvim'} -- highlight current line with mode color
+    use { 'mvllow/modes.nvim' } -- highlight current line with mode color
     use { 'numToStr/Comment.nvim' } -- comment text with gc
     use { 'nvim-treesitter/nvim-treesitter-textobjects' } -- Allow me to select functions, etc with keymaps
     use { 'anuvyklack/hydra.nvim', -- this package is to use same keybinding for different things

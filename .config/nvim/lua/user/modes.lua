@@ -11,5 +11,5 @@ modes.setup {
     },
     set_number = true,
     set_cursor = true,
-    line_opacity = 0.5,
+    line_opacity = 0.6,
 }

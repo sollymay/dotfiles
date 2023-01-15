@@ -9,34 +9,7 @@ local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
--- LSP Symbols
-local lsp_symbols = {
-    Text = "   (Text) ",
-    Method = "   (Method)",
-    Function = "   (Function)",
-    Constructor = "   (Constructor)",
-    Field = " ﴲ  (Field)",
-    Variable = "[] (Variable)",
-    Class = "   (Class)",
-    Interface = " ﰮ  (Interface)",
-    Module = "   (Module)",
-    Property = " 襁 (Property)",
-    Unit = "   (Unit)",
-    Value = "   (Value)",
-    Enum = " 練 (Enum)",
-    Keyword = "   (Keyword)",
-    Snippet = "   (Snippet)",
-    Color = "   (Color)",
-    File = "   (File)",
-    Reference = "   (Reference)",
-    Folder = "   (Folder)",
-    EnumMember = "   (EnumMember)",
-    Constant = " ﲀ  (Constant)",
-    Struct = " ﳤ  (Struct)",
-    Event = "   (Event)",
-    Operator = "   (Operator)",
-    TypeParameter = "   (TypeParameter)",
-}
+
 cmp.setup {
     completion = {
         completeopt = 'menu,menuone,noinsert'
@@ -84,24 +57,27 @@ cmp.setup {
         end, { "i", "s" }),
     },
     formatting = {
-        format = function(entry, item)
-            item.kind = lsp_symbols[item.kind]
-            item.menu = ({
-                buffer = "[Buffer]",
-                nvim_lsp = "[LSP]",
-                luasnip = "[Snippet]",
-            })[entry.source.name]
-            return item
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+            local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+            local strings = vim.split(kind.kind, "%s", { trimempty = true })
+            kind.kind = " " .. (strings[1] or "") .. " "
+            kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+            return kind
         end,
     },
     window = {
         completion = { -- rounded border; thin-style scrollbar
             border = "rounded",
-            scrollbar = '║',
+            scrollbar = false,
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+            col_offset = -3,
+            side_padding = 0,
         },
         documentation = {
             border = "rounded",
-            scrollbar = '║',
+            scrollbar = false,
         },
     },
 }

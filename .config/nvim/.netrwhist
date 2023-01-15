@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
-let g:netrw_dirhist_7='/Users/salomonmay/Documents/coding/Flutter-Dev/bmi-calculator-flutter/lib'
-let g:netrw_dirhist_6='/Users/salomonmay/Documents/coding/Flutter-Dev/bmi-calculator-flutter'
-let g:netrw_dirhist_5='/Users/salomonmay/Documents/coding/Flutter-Dev'
-let g:netrw_dirhist_4='/Users/salomonmay/Documents/coding/Flutter-Dev/FriendlyChat'
-let g:netrw_dirhist_3='/Users/salomonmay/Documents/coding/Flutter-Dev/FriendlyChat/lib'
-let g:netrw_dirhist_2='/Users/salomonmay/Documents/coding/Flutter-Dev/FriendlyChat'
-let g:netrw_dirhist_1='/Users/salomonmay/Documents/coding/Flutter-Dev/FriendlyChat/lib'

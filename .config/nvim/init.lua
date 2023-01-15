@@ -50,10 +50,9 @@ require "user.modes"
 require "user.keymaps"
 
 -- Things i still can't do in LUA
-vim.cmd [[ highlight gitsignscurrentlineblame guifg=#ffffff]]
-vim.cmd [[ autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-vim.cmd [[ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-vim.cmd [[ autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil,1000)]]
+vim.cmd [[ autocmd BufWritePre *.dart lua vim.lsp.buf.format({timeout_ms =1000})]]
+vim.cmd [[ autocmd BufWritePre *.py lua vim.lsp.buf.format({timeout_ms = 1000})]]
+vim.cmd [[ autocmd BufWritePre *.lua lua vim.lsp.buf.format({timeout_ms=1000})]]
 vim.cmd [[ let g:VM_maps = {}]]
 vim.cmd [[ let g:VM_maps['Find Under'] = '<C-d>']]
 vim.cmd [[ let g:VM_maps['Find Subword Under'] = '<C-d>']]
@@ -62,13 +61,4 @@ vim.cmd [[let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>']]
 vim.cmd [[ let g:dracula_colorterm = 0]]
 -- Nvim theme
 vim.cmd [[colorscheme dracula]]
-vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#50fa7b' })
-vim.api.nvim_set_hl(0, 'DapLogPoint', { fg = '#f1fa8c' })
-vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#ff5555' })
-
-vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint' })
-vim.fn.sign_define('DapBreakpointCondition', { text = 'ﳁ', texthl = 'DapBreakpoint' })
-vim.fn.sign_define('DapBreakpointRejected', { text = '', texthl = 'DapBreakpoint' })
-vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'DapLogPoint' })
-vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped' })
-vim.api.nvim_command("redraw")
+vim.cmd [[ highlight gitsignscurrentlineblame guifg=#ffffff]]
