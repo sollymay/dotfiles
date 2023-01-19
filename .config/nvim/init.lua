@@ -44,7 +44,7 @@ require "user.telescope"
 require "user.todo-comments"
 require "user.toggleterm"
 require "user.hydra"
--- require "user.dracula"
+require "user.dracula"
 require "user.modes"
 -- Keymaps
 require "user.keymaps"
