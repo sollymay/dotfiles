@@ -95,4 +95,12 @@ source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f "/home/salomonmay/.ghcup/env" ] && source "/home/salomonmay/.ghcup/env" # ghcup-env
 export PATH="$HOME/tools/lua-language-server/bin:$PATH"
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
-
+alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
+        
+alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"

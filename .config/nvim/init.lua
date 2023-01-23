@@ -19,7 +19,7 @@ vim.opt.splitright = true -- opens a split to the right instead of left
 vim.opt.showtabline = 2
 vim.o.completeopt = "menu,menuone"
 vim.o.signcolumn = "yes"
-vim.g.glow_border = "rounded"
+-- vim.g.glow_border = "rounded"
 vim.o.cmdheight = 0 -- no spacing for the command line
 -- Setting leader to space
 vim.g.mapleader = " "
@@ -46,6 +46,7 @@ require "user.toggleterm"
 require "user.hydra"
 require "user.dracula"
 require "user.modes"
+require "user.whitespace"
 -- Keymaps
 require "user.keymaps"
 
