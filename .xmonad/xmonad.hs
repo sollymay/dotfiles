@@ -83,7 +83,7 @@ myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
     -- close focused window
-    , ((modm,               xK_space ), sendMessage NextLayout)
+    , ((modm,               xK_s ), sendMessage NextLayout)
     , ((modm .|. shiftMask, xK_c     ), kill)
 
     -- Volume and Media Control
@@ -94,7 +94,7 @@ myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
     , ((0, xF86XK_AudioNext), spawn "playerctl next")
     , ((0, xF86XK_AudioPlay), spawn "playerctl play-pause")
      -- Reset the layouts on the current workspace to default
-    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
+    , ((modm .|. shiftMask, xK_s ), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
     , ((modm,               xK_n     ), refresh)
@@ -331,7 +331,7 @@ help = unlines ["The default modifier key is 'alt'. Default keybindings:",
     "mod-p            Launch dmenu",
     "mod-Shift-p      Launch gmrun",
     "mod-Shift-c      Close/kill the focused window",
-    "mod-Space        Rotate through the available layout algorithms",
+    "mod-s        Rotate through the available layout algorithms",
     "mod-Shift-Space  Reset the layouts on the current workSpace to default",
     "mod-n            Resize/refresh viewed windows to the correct size",
     "mod-Shift-/      Show this help message with the default keybindings",
