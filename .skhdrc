@@ -22,6 +22,12 @@ shift + alt - 3 : /opt/homebrew/bin/yabai -m window --space 3; \
                   /opt/homebrew/bin/yabai -m display --focus 3
 shift + alt - 4 : /opt/homebrew/bin/yabai -m window --space 4; \
                   /opt/homebrew/bin/yabai -m display --focus 4
+shift + alt - 5 : /opt/homebrew/bin/yabai -m window --space 5; \
+                  /opt/homebrew/bin/yabai -m display --focus 5
+shift + alt - 6 : /opt/homebrew/bin/yabai -m window --space 6; \
+                  /opt/homebrew/bin/yabai -m display --focus 6
+shift + alt - 7  : /opt/homebrew/bin/yabai -m window --space 7; \
+                  /opt/homebrew/bin/yabai -m display --focus 7
 
 # Resize windows
 alt - h : /opt/homebrew/bin/yabai -m window --resize left:-100:0; \
@@ -70,3 +76,7 @@ shift + alt - b : if [[ $(/opt/homebrew/bin/yabai -m config window_border) = "of
 alt - 1 : /opt/homebrew/bin/yabai -m display --focus 1
 alt - 2 : /opt/homebrew/bin/yabai -m display --focus 2
 alt - 3 : /opt/homebrew/bin/yabai -m display --focus 3
+alt - 4 : /opt/homebrew/bin/yabai -m display --focus 4
+alt - 5 : /opt/homebrew/bin/yabai -m display --focus 5
+alt - 6 : /opt/homebrew/bin/yabai -m display --focus 6
+alt - 7 : /opt/homebrew/bin/yabai -m display --focus 7

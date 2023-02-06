@@ -4,8 +4,8 @@ return require("packer").startup({ function(use)
     use "Mofiqul/dracula.nvim" -- Theme
     use "tpope/vim-fugitive" -- Git commands
     -- use { 'dracula/vim' }
-    use "bronson/vim-trailing-whitespace" -- highlight trailing spaces
-    use "kyazdani42/nvim-web-devicons" -- requirements from other plugins
+    use { "johnfrankmorgan/whitespace.nvim" }
+    use { "kyazdani42/nvim-web-devicons" } -- requirements from other plugins
     use { "nvim-lualine/lualine.nvim" } -- https://github.com/nvim-lualine/lualine.nvim: status line
     use { "nvim-lua/plenary.nvim" } -- requirements from other plugins
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- better syntax highlighting
@@ -56,6 +56,7 @@ return require("packer").startup({ function(use)
     use { "jbyuki/venn.nvim" } -- diagramos (have not really used it)
     use { 'mvllow/modes.nvim' } -- highlight current line with mode color
     use { 'numToStr/Comment.nvim' } -- comment text with gc
+    use { 'dhruvasagar/vim-table-mode' } -- markdown tables made easy
     use { 'nvim-treesitter/nvim-treesitter-textobjects' } -- Allow me to select functions, etc with keymaps
     use { 'anuvyklack/hydra.nvim', -- this package is to use same keybinding for different things
         requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
