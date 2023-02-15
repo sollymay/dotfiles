@@ -265,6 +265,7 @@ myStartupHook = do
         spawnOnce "picom &"
         spawnOnce "ulauncher --hide-window --no-window-shadow &"
         spawnOnce "/bin/bash -c '/usr/bin/xhost +SI:localuser:root && /home/salomonmay/.config/kinto/killdups.sh && /usr/local/bin/xkeysnail --quiet --watch /home/salomonmay/.config/kinto/kinto.py'"
+        spawnOnce "/usr/lib/pcloud"
         spawnOnce "xinput set-prop 'Logitech ERGO M575' 'libinput Natural Scrolling Enabled' 1"
         spawnOnce "stalonetray"
         spawnOnce "blueman-applet"
@@ -316,7 +317,7 @@ defaults = def {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = lessBorders AllFloats $ spacingRaw False (Border 0 10 10 10) True (Border 10 10 10 10) True $ myLayout,
+        layoutHook         = lessBorders AllFloats $ spacingRaw False (Border 0 10 10 10) True (Border 10 10 10 10) True myLayout,
         manageHook         = myManageHook <+> manageHook def,
         handleEventHook    = myEventHook,
         startupHook        = myStartupHook
