@@ -24,7 +24,7 @@ vim.api.nvim_set_keymap("n", "<leader>dp", "<cmd>lua vim.lsp.diagnostic.goto_pre
 vim.api.nvim_set_keymap('', '<leader>.', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true })
 vim.api.nvim_set_keymap('', '<leader>r', '<cmd>lua require"renamer".rename()<CR>', { noremap = true })
 -- Utilities
-vim.api.nvim_set_keymap('', '<leader>e', '<cmd>Trouble<cr>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('', '<leader>e', ':TodoTelescope<cr>', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('', '<leader>o', ':FlutterOutlineToggle<CR>', { noremap = true })
 vim.api.nvim_set_keymap('', 'rn', ':FlutterRun<CR>', { noremap = true })
 vim.api.nvim_set_keymap('', 'qt', ':FlutterQuit<CR>', { noremap = true })

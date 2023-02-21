@@ -1,5 +1,6 @@
 local status_ok, todos = pcall(require, "todo-comments")
 if not status_ok then
-  return
+    return
 end
-todos.setup{}
+todos.setup {}
+--TODO: fix this texct
