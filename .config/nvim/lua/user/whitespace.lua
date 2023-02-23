@@ -1,4 +1,4 @@
-local status_ok, whitespace = pcall(require, "whitespcae=nvim")
+local status_ok, whitespace = pcall(require, "whitespace-nvim")
 if not status_ok then
     return
 end

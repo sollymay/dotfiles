@@ -9,6 +9,11 @@ return require("packer").startup({
         use { "kyazdani42/nvim-web-devicons" } -- requirements from other plugins
         use { "nvim-lualine/lualine.nvim" } -- https://github.com/nvim-lualine/lualine.nvim: status line
         use { "nvim-lua/plenary.nvim" } -- requirements from other plugins
+        use { "rest-nvim/rest.nvim", requires = { 'nvim-lua/plenary.nvim' }, config = function()
+            require("rest-nvim").setup({
+                result_split_horizontal = true,
+            })
+        end } -- Rest testing inside nvim
         use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- better syntax highlighting
         use { "p00f/nvim-ts-rainbow" } -- Rainbow parens
         use { 'kyazdani42/nvim-tree.lua' } -- equivalent to NerdTree
@@ -62,7 +67,7 @@ return require("packer").startup({
         use { 'anuvyklack/hydra.nvim', -- this package is to use same keybinding for different things
             requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
         }
-        use '/home/sollymay/Documents/coding/lua/nvim-todoist.lua'
+        use '/home/salomonmay/Documents/coding/lua/plugins/todoist-telescope.nvim'
     end,
     config = {
         display = {

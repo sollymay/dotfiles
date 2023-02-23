@@ -120,3 +120,5 @@ pomodoro () {
 
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
+
+alias luamake=/home/salomonmay/lua-language-server/3rd/luamake/luamake

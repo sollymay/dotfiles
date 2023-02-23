@@ -66,6 +66,8 @@ vim.api.nvim_set_keymap('', '<leader>m', ':Glow<CR>', { noremap = true })
 vim.api.nvim_set_keymap('', '<leader>N', '<C-N>', { noremap = true })
 
 vim.api.nvim_set_keymap('n', '<leader>wd', ':lua require("whitespace-nvim").trim()<CR>', { noremap = true })
+
+vim.api.nvim_set_keymap('n', '<leader>rr', '<Plug>RestNvim', { noremap = true })
 -- terminal shortcuts
 function _G.set_terminal_keymaps()
     local opts = { noremap = true }

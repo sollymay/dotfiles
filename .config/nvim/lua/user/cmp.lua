@@ -16,12 +16,12 @@ cmp.setup {
     },
     sources = {
         { name = 'jira' },
-        { name = 'luasnip', options = { insert = true } },
-        { name = 'path', options = { insert = true } },
+        { name = 'luasnip',  options = { insert = true } },
+        { name = 'path',     options = { insert = true } },
         { name = 'nvim_lua', options = { insert = true } },
         { name = 'nvim_lsp', options = { insert = true } },
-        { name = 'buffer', options = { insert = true } },
-        { name = 'cmdline', options = { insert = true } },
+        { name = 'buffer',   options = { insert = true } },
+        { name = 'cmdline',  options = { insert = true } },
     },
     snippet = {
         expand = function(args)
@@ -29,8 +29,6 @@ cmp.setup {
         end,
     },
     mapping = {
-        ["<s-tab>"] = cmp.mapping.select_prev_item(),
-        ["<tab>"] = cmp.mapping.select_next_item(),
         -- ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
         -- ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
         -- ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -49,8 +47,8 @@ cmp.setup {
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
+            elseif luasnip.jumpable( -1) then
+                luasnip.jump( -1)
             else
                 fallback()
             end
