@@ -1,17 +1,11 @@
-local status_ok, dap = pcall(require, "dap")
-if not status_ok then
-    return
-end
-
-vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#50fa7b' })
-vim.api.nvim_set_hl(0, 'DapLogPoint', { fg = '#f1fa8c' })
-vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#ff5555' })
-
-vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint' })
-vim.fn.sign_define('DapBreakpointCondition', { text = 'ﳁ', texthl = 'DapBreakpoint' })
-vim.fn.sign_define('DapBreakpointRejected', { text = '', texthl = 'DapBreakpoint' })
-vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'DapLogPoint' })
-vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped' })
+return {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+        'rcarriga/nvim-dap-ui',
+'theHamsta/nvim-dap-virtual-text'
+    },
+    config = function ()
+        local dap = require("dap")
 dap.adapters.dart = {
     type = "executable",
     command = "flutter",
@@ -29,10 +23,10 @@ dap.configurations.dart = {
         cwd = "${workspaceFolder}",
     }
 }
-require("nvim-dap-virtual-text").setup()
-require("dapui").setup()
-
 local dapui = require("dapui")
+local nvim_dap = require("nvim-dap-virtual-text")
+nvim_dap.setup({})
+dapui.setup()
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
@@ -47,3 +41,7 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 dap.defaults.fallback.terminal_win_cmd = '80vsplit new'
+
+    end
+}
+

@@ -1,32 +1,32 @@
-local status_ok, toggleterm = pcall(require, "toggleterm")
-if not status_ok then
-    return
-end
+return {
+    "akinsho/toggleterm.nvim",
+    config = function()
 
-toggleterm.setup({
-    size = 15,
-    open_mapping = [[<c-\>]],
-    hide_numbers = true,
-    start_in_insert = true,
-    insert_mappings = true,
-    persist_size = true,
-    direction = "horizontal",
-    shade_terminals = true,
-    close_on_exit = true,
-    shell = vim.o.shell,
-    float_opts = {
-        -- The border key is *almost* the same as 'nvim_open_win'
-        -- see :h nvim_open_win for details on borders however
-        -- the 'curved' border is a custom border type
-        -- not natively supported but implemented in this plugin.
-        border = "curved",
-        winblend = 3,
-        highlights = {
-            border = "Normal",
-            background = "lualine_b_replace",
-        },
-    },
-})
+        require("toggleterm").setup({
+            size = 15,
+            open_mapping = [[<c-\>]],
+            hide_numbers = true,
+            start_in_insert = true,
+            insert_mappings = true,
+            persist_size = true,
+            direction = "horizontal",
+            shade_terminals = true,
+            close_on_exit = true,
+            shell = vim.o.shell,
+            float_opts = {
+                -- The border key is *almost* the same as 'nvim_open_win'
+                -- see :h nvim_open_win for details on borders however
+                -- the 'curved' border is a custom border type
+                -- not natively supported but implemented in this plugin.
+                border = "curved",
+                winblend = 3,
+                highlights = {
+                    border = "Normal",
+                    background = "lualine_b_replace",
+                },
+            },
+        })
+
 
 function _G.set_terminal_keymaps()
     local opts = { noremap = true }
@@ -70,3 +70,5 @@ local python = Terminal:new({ cmd = "python", hidden = true })
 function _PYTHON_TOGGLE()
     python:toggle()
 end
+end,
+}

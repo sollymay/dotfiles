@@ -1,10 +1,10 @@
 -- telescope configuration:
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
-
-telescope.setup({
+local telescope = require("telescope")
+return {
+'nvim-telescope/telescope.nvim',
+dependencies = {'nvim-lua/plenary.nvim'},
+config = function()
+    require("telescope").setup({
     extensions = {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown {
@@ -24,5 +24,5 @@ telescope.setup({
 
 telescope.load_extension('ui-select')
 telescope.load_extension('flutter')
--- telescope.load_extension('fzf')
--- telescope.load_extension('file_browser')
+end
+}

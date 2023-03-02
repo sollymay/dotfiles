@@ -1,8 +1,7 @@
-local status_ok, whitespace = pcall(require, "whitespace-nvim")
-if not status_ok then
-    return
-end
-whitespace.setup {
+return {
+    'johnfrankmorgan/whitespace.nvim',
+config = function()
+require("whitespace-nvim").setup {
     -- configuration options and their defaults
 
     -- `highlight` configures which highlight is used to display
@@ -13,3 +12,4 @@ whitespace.setup {
     -- displaying trailing whitespace
     ignored_filetypes = { 'TelescopePrompt', 'Trouble', 'help' },
 }
+end}

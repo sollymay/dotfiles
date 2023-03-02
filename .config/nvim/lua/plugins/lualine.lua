@@ -1,8 +1,8 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
-    return
-end
-lualine.setup {
+
+return {'nvim-lualine/lualine.nvim',
+
+config = function()
+require("lualine").setup {
     options = {
         theme = 'dracula',
         component_separators = { left = '', right = '' },
@@ -15,4 +15,6 @@ lualine.setup {
         lualine_x = { 'filetype' },
         lualine_z = { 'location' },
     },
+}
+end
 }

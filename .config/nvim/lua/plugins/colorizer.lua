@@ -1,9 +1,7 @@
-local status_ok, colorizer  = pcall(require, "colorizer")
-if not status_ok then
-  return
-end
-
-colorizer.setup{
+return {
+'norcalli/nvim-colorizer.lua',
+    config = function() 
+    require("colorizer").setup{
     DEFAULT_OPTIONS = {
         RGB      = true;         -- #RGB hex codes
         RRGGBB   = true;         -- #RRGGBB hex codes
@@ -16,4 +14,6 @@ colorizer.setup{
         -- Available modes: foreground, background
         mode     = 'background'; -- Set the display mode.
   }
+} 
+end
 }

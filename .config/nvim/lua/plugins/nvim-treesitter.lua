@@ -1,9 +1,9 @@
 -- nvim-treesiter config
-local status_ok, ts_configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-  return
-end
-ts_configs.setup{
+return{
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+config = function()
+    require("nvim-treesitter.configs").setup{
     highlight = {
       enable = true,
     },
@@ -43,4 +43,6 @@ ts_configs.setup{
           },
         },
       },
+}
+end
 }
