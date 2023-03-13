@@ -2,6 +2,13 @@ return {
     -- General Plugins
     { 'Mofiqul/dracula.nvim' },
     { 'tpope/vim-fugitive' }, -- Git commands
+    { 'ldelossa/gh.nvim',
+        dependencies = { 'ldelossa/litee.nvim' },
+        config = function()
+            require('litee.lib').setup()
+            require('litee.gh').setup()
+        end
+    },
     { 'kyazdani42/nvim-web-devicons' }, -- requirements from other plugins
     { 'nvim-lua/plenary.nvim' }, -- requirements from other plugins
     { 'rest-nvim/rest.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, config = function()
@@ -17,7 +24,7 @@ return {
     { 'nvim-telescope/telescope.nvim' }, -- Probably best search out there
     { 'nvim-tree/nvim-tree.lua' }, -- Working tree
     { 'p00f/nvim-ts-rainbow' }, -- Rainbow parens
-    { 'matze/vim-move' },
+    { 'fedepujol/move.nvim' },
     { 'folke/noice.nvim',
         config = function()
             require('noice').setup({
@@ -74,7 +81,7 @@ return {
 
     -- Nice Features
     { 'tpope/vim-surround' }, -- To easily enclose stuff in parens and quotes
-    { 'wakatime/vim-wakatime' }, -- Tracking my devel time
+    { 'wakatime/vim-wakatime' }, -- Tracking my devel ti““““
     { 'mg979/vim-visual-multi' }, -- multicursor support
     { 'jbyuki/venn.nvim' }, -- diagramos (have not really used it)
     { 'dhruvasagar/vim-table-mode' }, -- markdown tables made easy

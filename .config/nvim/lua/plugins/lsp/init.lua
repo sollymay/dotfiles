@@ -20,7 +20,8 @@ return {
             "dockerls",
             "jsonls",
             "sqlls",
-            "hls"
+            "hls",
+            "marksman"
         }
 
         mason_lspconfig.setup({
@@ -76,6 +77,11 @@ return {
                     }
                 })
             end,
+            ["marksman"] = function()
+                lspconfig.marksman.setup({
+
+                })
+            end
         })
     end,
 }

@@ -39,10 +39,10 @@ map("n", "<C-j>", "<C-w>j", { noremap = true })
 map("n", "<C-k>", "<C-w>k", { noremap = true })
 map("n", "<C-l>", "<C-w>l", { noremap = true })
 -- Move text up and down
-map('n', 'J', ':m .+1<cr>==', { noremap = true })
-map('n', 'K', ':m .-2<cr>==', { noremap = true })
-map('v', 'J', ":m '>+1<cr>gv=gv", { noremap = true })
-map('v', 'K', ":m '<-2<cr>gv=gv", { noremap = true }) -- DAP
+-- map('n', 'J', ':m .+1<cr>==', { noremap = true })
+-- map('n', 'K', ':m .-2<cr>==', { noremap = true })
+-- map('v', 'J', ":m '>+1<cr>gv=gv", { noremap = true })
+-- map('v', 'K', ":m '<-2<cr>gv=gv", { noremap = true }) -- DAP
 --map('n', '<c-k>', ':lua require"dap".step_out()<CR>')
 --map('n', "<c-l>", ':lua require"dap".step_into()<CR>')
 --map('n', '<c-j>', ':lua require"dap".step_over()<CR>')
@@ -68,6 +68,18 @@ map('', '<leader>N', '<C-N>', { noremap = true })
 map('n', '<leader>wd', ':lua require("whitespace-nvim").trim()<CR>', { noremap = true })
 
 map('n', '<leader>rr', '<Plug>RestNvim', { noremap = true })
+
+-- Normal-mode commands
+map('n', '<S-j>', ':MoveLine(1)<CR>', { noremap = true, silent = true })
+map('n', '<S-k>', ':MoveLine(-1)<CR>', { noremap = true, silent = true })
+map('n', '<S-h>', ':MoveHChar(-1)<CR>', { noremap = true, silent = true })
+map('n', '<S-l>', ':MoveHChar(1)<CR>', { noremap = true, silent = true })
+
+-- Visual-mode commands
+map('v', '<S-j>', ':MoveBlock(1)<CR>', { noremap = true, silent = true })
+map('v', '<S-k>', ':MoveBlock(-1)<CR>', { noremap = true, silent = true })
+map('v', '<S-h>', ':MoveHBlock(-1)<CR>', { noremap = true, silent = true })
+map('v', '<S-l>', ':MoveHBlock(1)<CR>', { noremap = true, silent = true })
 -- terminal shortcuts
 function _G.set_terminal_keymaps()
     local opts = { noremap = true }
