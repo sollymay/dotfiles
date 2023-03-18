@@ -1,1 +1,1 @@
-.zshrc##os.Linux
+.zshrc##os.Darwin
