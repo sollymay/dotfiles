@@ -87,6 +87,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/Documents/coding/Flutter-SDK/flutter/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/usr/bin:$PATH"
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 #!/bin/bash
 
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -106,3 +107,4 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
         -title 'Break is over! Get back to work 😬'\
         -appIcon '~/Pictures/pumpkin.png'\
         -sound Crystal"
+

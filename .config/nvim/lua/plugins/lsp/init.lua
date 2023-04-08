@@ -23,7 +23,8 @@ return {
             "sqlls",
             "hls",
             "marksman",
-            "emmet_ls"
+            "emmet_ls",
+            "html"
         }
 
         mason_lspconfig.setup({
@@ -35,7 +36,7 @@ return {
                 lspconfig[server_name].setup({
                 })
             end,
-            ["pyright"] = function()
+            ["pylsp"] = function()
                 lspconfig.pylsp.setup({
                     settings = {
                         pylsp = {
@@ -52,14 +53,14 @@ return {
                                     ignore = {},
                                     maxLineLength = 120
                                 },
-                                mypy = { enabled = false },
+                                mypy = { enabled = true },
                                 isort = { enabled = false },
                                 yapf = { enabled = false },
                                 pylint = { enabled = false },
                                 pydocstyle = { enabled = false },
                                 mccabe = { enabled = false },
                                 preload = { enabled = false },
-                                rope_completion = { enabled = false }
+                                rope_completion = { enabled = true }
                             }
                         },
                     }
