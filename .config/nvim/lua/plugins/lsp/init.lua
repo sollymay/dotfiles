@@ -24,7 +24,8 @@ return {
             "hls",
             "marksman",
             "emmet_ls",
-            "html"
+            "html",
+            "tsserver"
         }
 
         mason_lspconfig.setup({

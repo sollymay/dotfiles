@@ -16,6 +16,8 @@ vim.opt.smartindent = true    -- indentation strategy
 vim.opt.title = false         -- don't have a title row on top
 vim.opt.mouse = 'a'           -- allow mouse usage
 vim.opt.splitright = true     -- opens a split to the right instead of left
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.showtabline = 2
 vim.o.completeopt = "menu,menuone"
 vim.o.signcolumn = "yes"
@@ -47,6 +49,7 @@ vim.cmd [[ autocmd BufWritePre *.py lua vim.lsp.buf.format({timeout_ms = 1000})]
 vim.cmd [[ autocmd BufWritePre *.lua lua vim.lsp.buf.format({timeout_ms=1000})]]
 vim.cmd [[ autocmd BufWritePre *.html lua vim.lsp.buf.format({timeout_ms=1000})]]
 vim.cmd [[ autocmd BufWritePre *.json lua vim.lsp.buf.format({timeout_ms=1000})]]
+vim.cmd [[ autocmd BufReadPost,FileReadPost * normal zR ]]
 vim.cmd [[ let g:VM_maps = {}]]
 vim.cmd [[ let g:VM_maps['Find Under'] = '<C-d>']]
 vim.cmd [[ let g:VM_maps['Find Subword Under'] = '<C-d>']]
