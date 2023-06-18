@@ -1,3 +1,6 @@
+case $- in *i*)
+    [ -z "$TMUX" ] && exec tmux
+esac
 export TERM="xterm-256color"
 [[ -d /opt/brew/share/zsh/site-functions/ ]] && fpath+=(/opt/brew/share/zsh/site-functions/)
 [[ -d /opt/homebrew/share/zsh/site-functions/ ]] && fpath+=(/opt/homebrew/share/zsh/site-functions/)
@@ -94,9 +97,7 @@ source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f "/home/salomonmay/.ghcup/env" ] && source "/home/salomonmay/.ghcup/env" # ghcup-env
 export PATH="$HOME/tools/lua-language-server/bin:$PATH"
-case $- in *i*)
-    [ -z "$TMUX" ] && exec tmux
-esac
+
 alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
         -title 'Work Timer is up! Take a Break 😊'\
         -appIcon '~/Pictures/pumpkin.png'\
@@ -124,3 +125,5 @@ alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
 
 alias luamake=/home/salomonmay/lua-language-server/3rd/luamake/luamake
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
