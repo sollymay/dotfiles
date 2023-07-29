@@ -1,4 +1,35 @@
 local map = vim.api.nvim_set_keymap
+function f(str)
+    local outer_env = _ENV
+    return (str:gsub("%b{}", function(block)
+        local code = block:match("{(.*)}")
+        local exp_env = {}
+        setmetatable(exp_env, {
+            __index = function(_, k)
+                local stack_level = 5
+                while debug.getinfo(stack_level, "") ~= nil do
+                    local i = 1
+                    repeat
+                        local name, value = debug.getlocal(stack_level, i)
+                        if name == k then
+                            return value
+                        end
+                        i = i + 1
+                    until name == nil
+                    stack_level = stack_level + 1
+                end
+                return rawget(outer_env, k)
+            end
+        })
+        local fn, err = load("return " .. code, "expression `" .. code .. "`", "t", exp_env)
+        if fn then
+            return tostring(fn())
+        else
+            error(err, 0)
+        end
+    end))
+end
+
 -- local function map(mode, lhs, rhs, opts)
 --     local options = { noremap = true }
 --     if opts then options = vim.tbl_extend('force', options, opts) end
@@ -6,7 +37,7 @@ local map = vim.api.nvim_set_keymap
 -- end
 --
 -- General Keyboard Shortcuts
-map('', '<C-e>', ':NvimTreeToggle<CR>', { noremap = true }) -- Nvim-tree toggle shortcut
+map('', '<C-e>', ':NvimTreeToggle<CR>', { noremap = true })            -- Nvim-tree toggle shortcut
 map('', '<leader>ff', ':Telescope find_files<CR>', { noremap = true }) --telescope find files shortcut
 map('', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true })
 map('', '<leader>fb', ':Telescope current_buffer_fuzzy_find<CR>', { noremap = true })
@@ -33,6 +64,10 @@ map('', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>", { noremap = tr
 map('', '<leader>tt', ':TodoTelescope<CR>', { silent = true, noremap = true })
 map('', '<leader>t', ":ToggleTerm<CR>", { noremap = true })
 map('', '<leader>pm', ':Glow<CR>', { noremap = true })
+local kanban_path = os.getenv("KANBAN_PATH")
+local work_kanban_path = os.getenv("WORK_KANBAN_PATH")
+map('', '<leader>k', f ":KanbanOpen {kanban_path}<CR>", { noremap = true })
+map('', '<leader>w', f ":KanbanOpen {work_kanban_path}<CR>", { noremap = true })
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", { noremap = true })
 map("n", "<C-j>", "<C-w>j", { noremap = true })
@@ -53,7 +88,7 @@ map('n', '<leader>dj', ':lua require"dap".down()<CR>', { noremap = true })
 map('n', '<leader>dc', ':lua require"dap".terminate()<CR>', { noremap = true })
 map('n', '<leader>dr', ':lua require"dap".repl.toggle({}, "vsplit")<CR><C-w>l', { noremap = true })
 map('n', '<leader>dH', ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>"
-    , { noremap = true })
+, { noremap = true })
 map('n', '<leader>de', ':lua require"dap".set_exception_breakpoints({"all"})<CR>', { noremap = true })
 map('n', '<leader>da', ':lua require"debugHelper".attach()<CR>', { noremap = true })
 map('n', '<leader>dA', ':lua require"debugHelper".attachToRemote()<CR>', { noremap = true })
