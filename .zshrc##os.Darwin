@@ -94,4 +94,6 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
+# Kanban Path for NVIM plugin
+export KANBAN_PATH="/Users/salomonmay/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/Personal/Tasks.md"
+export WORK_KANBAN_PATH="/Users/salomonmay/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/Work/Tasks.md"
