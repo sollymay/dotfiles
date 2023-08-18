@@ -1,4 +1,6 @@
 -- General Config
+vim.g.loaded_netrw = 1       -- disable for nvim-tree
+vim.g.loaded_netrwPlugin = 1 -- disable for nvim-tree
 vim.opt.undofile = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.encoding = 'utf-8'    -- encoding is utf-8
