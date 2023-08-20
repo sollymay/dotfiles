@@ -1,5 +1,7 @@
 local map = vim.api.nvim_set_keymap
+---@diagnostic disable-next-line: lowercase-global
 function f(str)
+    ---@diagnostic disable-next-line: undefined-global
     local outer_env = _ENV
     return (str:gsub("%b{}", function(block)
             local code = block:match("{(.*)}")
@@ -64,7 +66,9 @@ map('', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>", { noremap = tr
 map('', '<leader>tt', ':TodoTelescope<CR>', { silent = true, noremap = true })
 map('', '<leader>t', ":ToggleTerm<CR>", { noremap = true })
 map('', '<leader>pm', ':Glow<CR>', { noremap = true })
+---@diagnostic disable-next-line: unused-local
 local kanban_path = os.getenv("KANBAN_PATH")
+---@diagnostic disable-next-line: unused-local
 local work_kanban_path = os.getenv("WORK_KANBAN_PATH")
 map('', '<leader>k', f ":KanbanOpen {kanban_path}<CR>", { noremap = true })
 map('', '<leader>w', f ":KanbanOpen {work_kanban_path}<CR>", { noremap = true })
@@ -103,6 +107,7 @@ map('v', '<S-k>', ':MoveBlock(-1)<CR>', { noremap = true, silent = true })
 map('v', '<S-h>', ':MoveHBlock(-1)<CR>', { noremap = true, silent = true })
 map('v', '<S-l>', ':MoveHBlock(1)<CR>', { noremap = true, silent = true })
 -- terminal shortcuts
+---@diagnostic disable-next-line: duplicate-set-field
 function _G.set_terminal_keymaps()
     local opts = { noremap = true }
     vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
