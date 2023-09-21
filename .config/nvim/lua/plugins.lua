@@ -98,10 +98,31 @@ return {
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    },                                                 -- To easily enclose stuff in parens and quotes
+    },                           -- To easily enclose stuff in parens and quotes
 
-    { 'wakatime/vim-wakatime' },                       -- Tracking my devel ti““““
-    { 'mg979/vim-visual-multi' },                      -- multicursor support
+    { 'wakatime/vim-wakatime' }, -- Tracking my devel time
+    -- { 'YacineDo/mc.nvim' },      -- multicursor support
+    {
+        "smoka7/multicursors.nvim",
+        event = "VeryLazy",
+        opts = {},
+        cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+        keys = {
+            {
+                mode = { 'v', 'n' },
+                '<Leader>d',
+                '<cmd>MCstart<cr>',
+                desc = 'Create a selection for selected text or word under the cursor',
+            },
+            {
+                mode = { 'v', 'n' },
+                '<Leader>f',
+                '<cmd>MCpattern<cr>',
+                desc = 'Create a selection based on a pattern',
+            },
+
+        },
+    },
     { 'jbyuki/venn.nvim' },                            -- diagramos (have not really used it)
     { 'dhruvasagar/vim-table-mode' },                  -- markdown tables made easy
     { 'nvim-treesitter/nvim-treesitter-textobjects' }, -- Allow me to select functions, etc with keymaps
