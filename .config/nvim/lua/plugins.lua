@@ -2,7 +2,6 @@ return {
     -- General Plugins
     { 'Mofiqul/dracula.nvim' },
     { 'tpope/vim-fugitive' }, -- Git commands
-    { 'christoomey/vim-tmux-navigator' },
     {
         'ldelossa/gh.nvim',
         dependencies = { 'ldelossa/litee.nvim' },
@@ -11,8 +10,12 @@ return {
             require('litee.gh').setup()
         end
     },
+    {
+        "aserowy/tmux.nvim",
+        config = function() return require("tmux").setup() end
+    },
     { 'kyazdani42/nvim-web-devicons' }, -- requirements from other plugins
-    { 'nvim-lua/plenary.nvim' }, -- requirements from other plugins
+    { 'nvim-lua/plenary.nvim' },        -- requirements from other plugins
     {
         'rest-nvim/rest.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
@@ -29,8 +32,8 @@ return {
         end
     },
     { 'nvim-telescope/telescope.nvim' }, -- Probably best search out there
-    { 'nvim-tree/nvim-tree.lua' }, -- Working tree
-    { 'p00f/nvim-ts-rainbow' }, -- Rainbow parens
+    { 'nvim-tree/nvim-tree.lua' },       -- Working tree
+    { 'p00f/nvim-ts-rainbow' },          -- Rainbow parens
     { 'fedepujol/move.nvim' },
     {
         'folke/noice.nvim',
@@ -59,18 +62,18 @@ return {
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-cmdline' },
     { 'hrsh7th/nvim-cmp' },
-    { 'hrsh7th/cmp-nvim-lua' }, -- Lua Autocompletion
+    { 'hrsh7th/cmp-nvim-lua' },                    -- Lua Autocompletion
     { 'nvim-telescope/telescope-ui-select.nvim' }, -- used for code actions with default nvim-lsp
     {
         'filipdutescu/renamer.nvim',
         config = function()
             require('renamer').setup({})
         end
-    }, -- rename stuff quickly
-    { 'akinsho/flutter-tools.nvim' }, -- LSP for Flutter
+    },                                  -- rename stuff quickly
+    { 'akinsho/flutter-tools.nvim' },   -- LSP for Flutter
     { 'f-person/pubspec-assist-nvim' }, -- Install pubspec dependencies
-    { 'folke/trouble.nvim' }, --show list of diagnostics
-    { 'williamboman/mason.nvim' }, -- install LSP servers easily
+    { 'folke/trouble.nvim' },           --show list of diagnostics
+    { 'williamboman/mason.nvim' },      -- install LSP servers easily
     { 'onsails/lspkind.nvim' },
 
     -- Snippets
@@ -79,7 +82,7 @@ return {
     { 'rafamadriz/friendly-snippets' },
 
     -- Debugging
-    { 'mfussenegger/nvim-dap' }, -- Debugging plug in (set up breakpoints etc)
+    { 'mfussenegger/nvim-dap' },   -- Debugging plug in (set up breakpoints etc)
     { 'kosayoda/nvim-lightbulb' }, -- add lightbulb if there is a code suggestion
     { 'rcarriga/nvim-dap-ui' },
     { 'theHamsta/nvim-dap-virtual-text' },
@@ -95,16 +98,16 @@ return {
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    }, -- To easily enclose stuff in parens and quotes
+    },                                                 -- To easily enclose stuff in parens and quotes
 
-    { 'wakatime/vim-wakatime' }, -- Tracking my devel ti““““
-    { 'mg979/vim-visual-multi' }, -- multicursor support
-    { 'jbyuki/venn.nvim' }, -- diagramos (have not really used it)
-    { 'dhruvasagar/vim-table-mode' }, -- markdown tables made easy
+    { 'wakatime/vim-wakatime' },                       -- Tracking my devel ti““““
+    { 'mg979/vim-visual-multi' },                      -- multicursor support
+    { 'jbyuki/venn.nvim' },                            -- diagramos (have not really used it)
+    { 'dhruvasagar/vim-table-mode' },                  -- markdown tables made easy
     { 'nvim-treesitter/nvim-treesitter-textobjects' }, -- Allow me to select functions, etc with keymaps
     {
-        'anuvyklack/hydra.nvim', -- this package is to use same keybinding for different things
-        dependencies = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
+        'anuvyklack/hydra.nvim',                       -- this package is to use same keybinding for different things
+        dependencies = 'anuvyklack/keymap-layer.nvim'  -- needed only for pink hydras
     },
     {
         'arakkkkk/kanban.nvim',

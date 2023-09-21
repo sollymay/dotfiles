@@ -9,7 +9,6 @@ end
 
 -- Adding Loaders to load snippets
 local luasnip = require("luasnip")
-require("luasnip.loaders.from_vscode").load()
 local cmp = require "cmp"
 
 return {
@@ -22,12 +21,14 @@ return {
         'hrsh7th/cmp-cmdline',
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
-
+        'rafamadriz/friendly-snippets',
     },
     config = function()
+        require("luasnip.loaders.from_vscode").load()
+
         cmp.setup {
             completion = {
-                completeopt = 'menu,menuone,noinsert'
+                completeopt = 'menu,menuone'
             },
             sources = {
                 { name = 'jira' },
@@ -62,8 +63,8 @@ return {
                 ["<S-Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
-                    elseif luasnip.jumpable( -1) then
-                        luasnip.jump( -1)
+                    elseif luasnip.jumpable(-1) then
+                        luasnip.jump(-1)
                     else
                         fallback()
                     end
