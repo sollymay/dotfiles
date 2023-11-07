@@ -97,3 +97,5 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
 # Kanban Path for NVIM plugin
 export KANBAN_PATH="/Users/salomonmay/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/Personal/Tasks.md"
 export WORK_KANBAN_PATH="/Users/salomonmay/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/Work/Tasks.md"
+export OBSIDIAN_PATH="/Users/salomonmay/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
