@@ -90,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/Documents/coding/Flutter-SDK/flutter/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/usr/bin:$PATH"
+export PATH="$HOME/squashfs-root/usr/bin:$PATH"
 #!/bin/bash
 
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
