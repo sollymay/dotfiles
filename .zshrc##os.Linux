@@ -110,7 +110,7 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
         -sound Crystal"
 
 declare -A pomo_options
-pomo_options["work"]="45"
+pomo_options["work"]="50"
 pomo_options["break"]="10"
 
 pomodoro () {
