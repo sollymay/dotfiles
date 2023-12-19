@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 --TODO: fix this crap :D
 ---@diagnostic disable-next-line: lowercase-global
 function f(str)
@@ -58,6 +59,26 @@ return {
       nvim_cmp = true,
       min_chars = 2,
       prepend_note_id = true,
+=======
+return {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+        -- Required.
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+        "nvim-telescope/telescope.nvim",
+    },
+    opts = {
+        detect_cwd = true,
+        completion = {
+            nvim_cmp = true,
+            min_chars = 2,
+            prepend_note_id = true,
+        },
+>>>>>>> d9558f82d51217a0b2ddcae628e60f46966acc1b
     },
   },
 }
