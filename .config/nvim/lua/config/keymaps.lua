@@ -45,3 +45,9 @@ map("v", "<S-j>", ":MoveBlock(1)<CR>", { noremap = true, silent = true })
 map("v", "<S-k>", ":MoveBlock(-1)<CR>", { noremap = true, silent = true })
 map("v", "<S-h>", ":MoveHBlock(-1)<CR>", { noremap = true, silent = true })
 map("v", "<S-l>", ":MoveHBlock(1)<CR>", { noremap = true, silent = true })
+
+-- Move between tmux and nvim
+map("n", "<C-h>", "<cmd>lua require'tmux'.move_left()<cr>", { desc = "Go to left window" })
+map("n", "<C-j>", "<cmd>lua require'tmux'.move_bottom()<cr>", { desc = "Go to lower window" })
+map("n", "<C-k>", "<cmd>lua require'tmux'.move_top()<cr>", { desc = "Go to upper window" })
+map("n", "<C-l>", "<cmd>lua require'tmux'.move_right()<cr>", { desc = "Go to right window" })
