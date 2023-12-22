@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 return {
+<<<<<<< HEAD
     "epwalsh/obsidian.nvim",
     version = "*",
     lazy = true,
@@ -64,21 +65,38 @@ return {
     -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
     f("BufReadPre {obsidian_path}/**.md"),
     f("BufNewFile {obsidian_path}/**.md"),
+=======
+  "epwalsh/obsidian.nvim",
+  lazy = true,
+  ft = "markdown",
+  event = {
+    -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+>>>>>>> 7b28a50e4c790d4d23a10fdf2cd72e22e4a2d085
   },
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
+<<<<<<< HEAD
 
     -- see below for full list of optional dependencies 👇
   },
   opts = {
     dir = "{obsidian_path}/", -- no need to call 'vim.fn.expand' here
     -- see below for full list of options 👇
+=======
+  },
+  detect_cwd = true,
+  opts = {
+>>>>>>> 7b28a50e4c790d4d23a10fdf2cd72e22e4a2d085
     completion = {
       nvim_cmp = true,
       min_chars = 2,
       prepend_note_id = true,
+<<<<<<< HEAD
 >>>>>>> 8eb8a09 (migration into lazyvim)
+=======
+>>>>>>> 7b28a50e4c790d4d23a10fdf2cd72e22e4a2d085
     },
   },
 }
