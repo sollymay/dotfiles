@@ -9,4 +9,5 @@ return {
   { "Neevash/awesome-flutter-snippets" },
   { "jbyuki/venn.nvim" }, -- diagramos (have not really used it)
   { "nvim-treesitter/nvim-treesitter-textobjects" }, -- Allow me to select functions, etc with keymaps
+  { "onsails/lspkind.nvim" },
 }

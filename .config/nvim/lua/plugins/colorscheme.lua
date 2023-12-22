@@ -70,7 +70,7 @@ return {
             CmpItemAbbrMatch = { fg = colors.cyan, bg = "NONE" },
             Pmenu = { fg = colors.white, bg = "NONE" },
             PmenuSel = { bg = colors.selection, fg = "NONE" },
-            ["@type"] = { fg = colors.cyan, bg = colors.selection, italic = true },
+            ["@type"] = { fg = colors.cyan, italic = true },
             ["@attribute"] = { fg = colors.green, italic = true },
             ["@parameter"] = { fg = colors.orange, italic = true },
             ["@label"] = { fg = colors.purple, italic = true },
