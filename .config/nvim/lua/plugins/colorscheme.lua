@@ -84,7 +84,7 @@ return {
     end,
   },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load dracula
   {
     "LazyVim/LazyVim",
     opts = {
