@@ -1,20 +1,28 @@
 return {
   "epwalsh/obsidian.nvim",
-  version = "*",
+  version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
   dependencies = {
-    -- Required.
     "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",
-    "nvim-telescope/telescope.nvim",
   },
   opts = {
-    detect_cwd = true,
+    detect_cwd = false,
     completion = {
       nvim_cmp = true,
       min_chars = 2,
-      prepend_note_id = true,
+      new_notes_location = "current_dir",
+      prepend_note_id = false,
+      prepend_note_path = false,
+      use_path_only = true,
     },
+    workspaces = {
+      {
+        name = "personal",
+        path = os.getenv("OBSIDIAN_PATH"),
+      },
+    },
+
+    -- see below for full list of options 👇
   },
 }
