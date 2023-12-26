@@ -37,8 +37,6 @@ map("", "<leader>m", ":Glow<CR>", { noremap = true })
 -- Normal-mode commands
 map("n", "<S-j>", ":MoveLine(1)<CR>", { noremap = true, silent = true })
 map("n", "<S-k>", ":MoveLine(-1)<CR>", { noremap = true, silent = true })
-map("n", "<S-h>", ":MoveHChar(-1)<CR>", { noremap = true, silent = true })
-map("n", "<S-l>", ":MoveHChar(1)<CR>", { noremap = true, silent = true })
 
 -- Visual-mode commands
 map("v", "<S-j>", ":MoveBlock(1)<CR>", { noremap = true, silent = true })
