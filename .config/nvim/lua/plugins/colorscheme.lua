@@ -77,7 +77,6 @@ return {
             ["@label"] = { fg = colors.purple, italic = true },
             ["@variable.builtin"] = { fg = colors.purple, italic = true },
             ["@tag.attribute"] = { fg = colors.green, italic = true },
-            t,
           }
         end,
       })
