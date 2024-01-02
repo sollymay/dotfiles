@@ -49,3 +49,6 @@ map("n", "<C-h>", "<cmd>lua require'tmux'.move_left()<cr>", { desc = "Go to left
 map("n", "<C-j>", "<cmd>lua require'tmux'.move_bottom()<cr>", { desc = "Go to lower window" })
 map("n", "<C-k>", "<cmd>lua require'tmux'.move_top()<cr>", { desc = "Go to upper window" })
 map("n", "<C-l>", "<cmd>lua require'tmux'.move_right()<cr>", { desc = "Go to right window" })
+
+-- Leetcode
+map("n", "<leader>rn", ":Leet run<CR>", { noremap = true, silent = true })
