@@ -1,11 +1,13 @@
-Config { font = "xft:VictorMono Nerd Font Mono:bold:pixelsize=18:antialias=true"
-       -- appearance
-       , additionalFonts = ["xft:Mononoki Nerd Font:pixelsize=20:antialias=true:hinting=true"]
+Config { 
+      -- appearance
+      font = "VictorMono Nerd Font Mono Bold 16"
+
+       , additionalFonts = ["Mononoki Nerd Font 13"]
        , bgColor = "#282a36"
        , fgColor = "#f8f8f2"
-       , textOffsets = [-8]
-       , position = TopW C 99
-       --, position = Static {xpos=20, ypos=2, width=3798, height=32}
+       , textOffsets = [1]
+       --, position = TopW 40 C 99
+       , position = Static {xpos=27, ypos=0, width=3790, height=36}
 
        -- layout
        , sepChar =  "%"   -- delineator between plugin names and straight text
