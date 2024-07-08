@@ -1,0 +1,61 @@
+window {
+margin: 5px;
+padding: 5px;
+border: 3px solid #FF79C6;
+background-color: #282a36;
+border-radius: 15px;
+}
+
+#input {
+margin: 5px;
+color: #f8f8f2;
+padding: 7px 5px 7px 5px;
+border: 3px solid #44475a;
+border-radius: 15px;
+background-color: #44475a;
+}
+
+#inner-box {
+margin: 5px;
+border: 3px solid #282a36;
+border-radius: 15px;
+background-color: #282a36;
+}
+
+#outer-box {
+margin: 5px;
+border: 3px solid #282a36;
+border-radius: 15px;
+background-color: #282a36;
+}
+
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+} 
+
+#entry.activatable #text {
+color: #282a36;
+}
+
+#entry > * {
+color: #f8f8f2;
+}
+
+#entry:selected {
+background-color: #44475a;
+border: 3px solid #44475a;
+border-radius: 15px;
+padding: 7px 3px 7px 3px;
+}
+
+#entry:selected #text {
+font-weight: bold;
+color: #bd93f9;
+}
