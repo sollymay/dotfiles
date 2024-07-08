@@ -1,0 +1,86 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 43,
+    "spacing": 10,
+    "width": 3800,
+    "margin": "20 20 0 20",
+    "modules-left": [
+        "cpu",
+        "memory",
+        "network",
+        "custom/media"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "clock",
+        "tray"
+    ],
+    "cpu": {
+        "format": "󰇄 {usage}%"
+    },
+    "memory": {
+        "format": "󰍛 {percentage}%"
+    },
+    "network": {
+        "interface": "wlan0",
+        "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}"
+    },
+    "custom/media": {
+        "format": "| {icon}{}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "smooth-scrolling-threshold": 3,
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        }
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a, %d %b, %I:%M %p}"
+    },
+    "calendar": {},
+    "pulseaudio": {
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 13
+    },
+    "tray": {
+        "spacing": 10,
+        "icon-size": 21
+    }
+}

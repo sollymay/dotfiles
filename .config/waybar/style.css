@@ -1,0 +1,198 @@
+@define-color bg #282A36;
+@define-color cl #44475A;
+@define-color fg #f8f8f2;
+@define-color cm #6272a4;
+@define-color cyan #8be9fd;
+@define-color green #50fa7b;
+@define-color orange #ffb86c;
+@define-color pink #ff79c6;
+@define-color purple #bd93f9;
+@define-color red #ff5555;
+@define-color yellow #f1fa8c;
+
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: VictorMono Nerd Font;
+    font-weight: bold;
+    min-height: 25px;
+}
+
+.modules-left {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 18px;
+    transition: none;
+    color: @green;
+    background: @bg;
+    font-size: 20px;
+    border: 2px solid @fg;
+
+}
+
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+    margin-right: 8px;
+    border-radius: 18px;
+    transition: none;
+    background: @bg;
+    border: 2px solid @fg;
+}
+
+#workspaces button {
+    transition: none;
+    color: @fg;
+    background: transparent;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#workspaces button.persistent {
+    color: @fg;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-radius: inherit;
+    color: @pink;
+    background: @cl;
+}
+
+#workspaces button.visible {
+    color: @purple;
+    background: @cl;
+    border-radius: 18px; 
+}
+
+#language {
+    padding-left: 16px;
+    padding-right: 8px;
+    border-radius: 18px;
+    transition: none;
+    color: @fg;
+    background: @bg;
+}
+
+#keyboard-state {
+    margin-right: 8px;
+    padding-right: 16px;
+    border-radius: 0px 15px 15px 0px;
+    transition: none;
+    color: @fg;
+    background: @bg;
+}
+
+#custom-pacman {
+    padding-left: 16px;
+    padding-right: 8px;
+    border-radius: 18px;
+    transition: none;
+    color: @fg;
+    background: @bg;
+}
+
+#custom-mail {
+    margin-right: 8px;
+    padding-right: 16px;
+    border-radius: 18px;
+    transition: none;
+    color: @fg;
+    background: @bg;
+}
+
+
+#clock {
+    font-size: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 18px;
+    transition: none;
+    color: @orange;
+    background: @bg;
+    border: 2px solid @fg;
+
+}
+
+#custom-weather {
+    padding-right: 16px;
+    border-radius: 18px;
+    transition: none;
+    color: @fg;
+    background: @bg;
+}
+
+#pulseaudio {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 18px;
+    transition: none;
+    color: @purple;
+    background: @bg;
+    font-size: 20px;
+    border: 2px solid @fg;
+
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: @fg;
+}
+
+#custom-mem {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 18px;
+    transition: none;
+    color: #ffffff;
+    background: #282A36;
+}
+
+#temperature {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 18px;
+    transition: none;
+    color: @fg;
+    background: @bg;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+
+#tray {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 18px;
+    transition: none;
+    color: @fg;
+    background: @bg;
+    border: 2px solid @fg;
+
+}
+
+@keyframes blink {
+    to {
+        background-color: @fg;
+        color: @bg;
+    }
+}

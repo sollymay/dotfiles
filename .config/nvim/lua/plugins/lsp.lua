@@ -32,7 +32,6 @@ return {
       dockerls = {},
       jsonls = {},
       sqlls = {},
-      hls = {},
       marksman = {},
       emmet_ls = {},
       html = {},

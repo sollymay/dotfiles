@@ -1,5 +1,13 @@
 return {
   "hrsh7th/nvim-cmp",
+  dependencies = {
+    "hrsh7th/cmp-emoji",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "saadparwaiz1/cmp_luasnip",
+    "chrisgrieser/cmp-nerdfont",
+  },
   opts = {
     formatting = {
       fields = { "kind", "abbr", "menu" },
@@ -10,6 +18,14 @@ return {
         kind.menu = "    (" .. (strings[2] or "") .. ")"
         return kind
       end,
+    },
+    sources = {
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+      { name = "path" },
+      { name = "buffer" },
+      { name = "emoji" },
+      { name = "nerdfont" },
     },
     window = {
       completion = {

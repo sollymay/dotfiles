@@ -81,7 +81,7 @@ alias pip=/usr/local/bin/pip3
 export PATH="/opt/brew/opt/openssl@3/bin:$PATH"
 export PATH="/opt/brew/bin:$PATH"
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
