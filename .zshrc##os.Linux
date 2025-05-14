@@ -129,3 +129,13 @@ alias br="pomodoro 'break'"
 alias luamake=/home/salomonmay/lua-language-server/3rd/luamake/luamake
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH=~/pebble-dev/pebble-sdk-4.5-linux64/bin:$PATH
+export PATH=~/pebble-dev/pebble-sdk-4.5-linux64/bin:$PATH
+export PATH=~/pebble-dev/pebble-sdk-4.6-rc2-linux64/bin:$PATH
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=~/pebble-dev/pebble-sdk-4.6-rc2-linux64/bin:$PATH
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
