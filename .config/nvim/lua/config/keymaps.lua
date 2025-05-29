@@ -32,7 +32,7 @@ map("", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", { noremap = tr
 map("", "<leader>tt", ":TodoTelescope<CR>", { silent = true, noremap = true })
 
 -- Glow (Markdown Preview)
-map("", "<leader>m", ":Glow<CR>", { noremap = true })
+map("", "<leader>md", ":Vivify<CR>", { noremap = true })
 
 -- Normal-mode commands
 map("n", "<S-j>", ":MoveLine(1)<CR>", { noremap = true, silent = true })
