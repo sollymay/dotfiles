@@ -1,9 +1,0 @@
-icon_size 22
-kludges force_icons_size
-background "#282a36"
-grow_gravity E
-icon_gravity E
-#geometry 2x1+3730+20
-#max_geometry 2x1+3730+20
-geometry 2x1-35+6
-max_geometry 2x1-35+6
