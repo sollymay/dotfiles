@@ -1,5 +1,4 @@
 return {
-  { "p00f/nvim-ts-rainbow" }, -- Rainbow parens
   { "kosayoda/nvim-lightbulb" }, -- add lightbulb if there is a code suggestion
   { "dhruvasagar/vim-table-mode" }, -- markdown tables made easy
   { "wakatime/vim-wakatime" }, -- Tracking my devel time

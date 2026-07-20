@@ -4,12 +4,6 @@
 --
 local map = vim.keymap.set
 
-map("", "<leader>ff", ":Telescope find_files<CR>", { noremap = true }) --telescope find files shortcut
-map("", "<leader>fg", ":Telescope live_grep<CR>", { noremap = true })
-map("", "<leader>fb", ":Telescope current_buffer_fuzzy_find<CR>", { noremap = true })
-map("", "<leader><leader>", ":Telescope keymaps<CR>", { noremap = true })
-map("", "<leader>fh", ":Telescope help_tags<CR>", { noremap = true })
-
 -- LSP related stuff
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true })
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true })
