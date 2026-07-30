@@ -38,9 +38,5 @@ return {
       template = nil,
     },
     -- see below for full list of options 👇
-    completion = {
-      blink = true,
-      min_chars = 2,
-    },
   },
 }
